@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  extendedDescription?: string;
+}
+
+const { title, description, extendedDescription } = Astro.props;
+---
+
+<article class="issue-card card">
+  <span class="accent-bar" aria-hidden="true"></span>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  {extendedDescription && <p class="extended">{extendedDescription}</p>}
+</article>
+
+<style>
+  .issue-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .issue-card h3 {
+    font-size: 1.1rem;
+    color: var(--color-navy);
+  }
+
+  .issue-card p {
+    font-size: 0.95rem;
+    color: var(--color-slate);
+    line-height: 1.65;
+    max-width: none;
+  }
+
+  .issue-card .extended {
+    color: var(--color-charcoal);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e8eef5;
+  }
+</style>

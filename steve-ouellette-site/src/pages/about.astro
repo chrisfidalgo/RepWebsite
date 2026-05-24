@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout
+  title="About Steve Ouellette — State Representative, 8th Bristol District"
+  description="Learn about Steve Ouellette's lifetime of service to the South Coast communities of the 8th Bristol District."
+>
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>About Steve Ouellette</h1>
+      <p>A lifetime of local service. A practical voice for the 8th Bristol.</p>
+    </div>
+  </div>
+
+  <section class="section section--cream">
+    <div class="container about-layout">
+      <!-- Main content -->
+      <div class="about-content">
+
+        <!-- Section 1: Rooted in the South Coast -->
+        <div class="about-section">
+          <span class="accent-bar"></span>
+          <h2>Rooted in the South Coast</h2>
+          <p>
+            Steve Ouellette has built his public life around service — listening to
+            neighbors, solving practical problems, and working with people across
+            differences. His experience in municipal government, public safety, and
+            the trades gives him a grounded understanding of the issues facing
+            working families, schools, seniors, and local communities.
+          </p>
+          <p class="placeholder-note">
+            [PLACEHOLDER — Add biographical content about Steve's South Coast roots, family, and community ties before launch.]
+          </p>
+        </div>
+
+        <!-- Section 2: A background in service -->
+        <div class="about-section">
+          <span class="accent-bar"></span>
+          <h2>A background in service</h2>
+          <p>
+            Before serving at the State House, Steve worked in public safety and
+            the trades — roles that connect him directly to the working people
+            and families of the 8th Bristol District. He understands the challenges
+            that come with keeping communities safe, keeping a household running,
+            and making local government work.
+          </p>
+          <p class="placeholder-note">
+            [PLACEHOLDER — Add specific public safety roles, trade experience, and years of service. Verify all claims before launch.]
+          </p>
+        </div>
+
+        <!-- Section 3: A practical approach -->
+        <div class="about-section">
+          <span class="accent-bar"></span>
+          <h2>A practical approach to government</h2>
+          <p>
+            Steve's approach at the State House is simple: listen to constituents,
+            work with colleagues across the aisle when necessary, and focus on
+            results that people can see and feel in their daily lives. He avoids
+            political theater in favor of practical outcomes — grants, earmarks,
+            constituent service, and local advocacy.
+          </p>
+          <p class="placeholder-note">
+            [PLACEHOLDER — Add specific examples of bipartisan work, legislation supported, or practical wins. Verify all claims before launch.]
+          </p>
+        </div>
+
+        <!-- Section 4: Why re-election matters -->
+        <div class="about-section">
+          <img
+            src="/images/senior-event.jpg"
+            alt="Steve Ouellette connecting with a constituent at a district event"
+            class="content-photo"
+          />
+          <span class="accent-bar"></span>
+          <h2>Why re-election matters</h2>
+          <p>
+            Experience matters in state government. Representatives who build
+            relationships and learn the system over time are able to deliver more
+            for their districts. Steve is asking for the opportunity to continue
+            that work — to keep the 8th Bristol's voice at the State House and
+            to keep delivering practical results for the communities he serves.
+          </p>
+          <div class="election-notice">
+            <strong>Election: November 2026</strong>
+            <span class="placeholder-note">[Confirm exact date before launch]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="about-sidebar" aria-label="Quick facts about Steve Ouellette">
+        <img
+          src="/images/community-event.jpg"
+          alt="Steve Ouellette at a constituent event in the 8th Bristol District"
+          class="sidebar-photo"
+        />
+        <div class="sidebar-card card">
+          <h3>Quick Facts</h3>
+          <dl class="fact-list">
+            <div class="fact-item">
+              <dt>Office</dt>
+              <dd>Massachusetts State Representative</dd>
+            </div>
+            <div class="fact-item">
+              <dt>District</dt>
+              <dd>8th Bristol District</dd>
+            </div>
+            <div class="fact-item">
+              <dt>Communities</dt>
+              <dd>
+                <ul class="community-list" role="list">
+                  {['Acushnet', 'Fall River', 'Freetown', 'New Bedford', 'Westport'].map(c => (
+                    <li>{c}</li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+            <div class="fact-item">
+              <dt>Priorities</dt>
+              <dd>Working families, public schools, food security, arts & culture, municipal support</dd>
+            </div>
+            <div class="fact-item">
+              <dt>Campaign</dt>
+              <dd>Re-election, November 2026</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="sidebar-cta">
+          <a href="/#signup" class="btn btn-primary">Sign up for updates</a>
+          <a href="/contact" class="btn btn-secondary">Contact Steve</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    line-height: 1.75;
+    max-width: none;
+  }
+
+  .placeholder-note {
+    font-size: 0.83rem !important;
+    color: #e07b00 !important;
+    font-style: italic;
+    background-color: #fff9ee;
+    border: 1px solid #ffd07a;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .election-notice {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+    background-color: #e8eef5;
+    border-left: 4px solid var(--color-blue);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    color: var(--color-navy);
+  }
+
+  .sidebar-photo {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    display: block;
+    max-height: 280px;
+  }
+
+  .content-photo {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    display: block;
+    max-height: 320px;
+    object-position: center top;
+  }
+
+  /* Sidebar */
+  .about-sidebar {
+    position: sticky;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .sidebar-card {
+    background: #ffffff;
+  }
+
+  .sidebar-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-red);
+    color: var(--color-navy);
+  }
+
+  .fact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .fact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .fact-item dt {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted-blue);
+  }
+
+  .fact-item dd {
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+  }
+
+  .community-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+  }
+
+  .community-list li {
+    font-size: 0.78rem;
+    padding: 0.15rem 0.55rem;
+    background-color: #e8eef5;
+    border-radius: 999px;
+    color: var(--color-navy);
+    font-weight: 500;
+  }
+
+  .sidebar-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .sidebar-cta .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .about-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .about-sidebar {
+      position: static;
+      order: -1;
+    }
+
+    .sidebar-cta {
+      flex-direction: row;
+    }
+
+    .sidebar-cta .btn {
+      width: auto;
+    }
+  }
+</style>

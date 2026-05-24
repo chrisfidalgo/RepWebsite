@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import IssueCard from '../components/IssueCard.astro';
+import DistrictWinCard from '../components/DistrictWinCard.astro';
+import SignupFormPlaceholder from '../components/SignupFormPlaceholder.astro';
+import { issues } from '../data/issues';
+import { districtWins } from '../data/districtWins';
+
+const experienceCards = [
+  {
+    icon: '🛡',
+    title: 'Public Safety Service',
+    body: 'Steve has served in local public safety roles and understands the people who keep communities safe.',
+  },
+  {
+    icon: '🔧',
+    title: 'Trades and Working Families',
+    body: 'Steve brings a practical, hands-on background rooted in the trades and working-class communities.',
+  },
+  {
+    icon: '🏛',
+    title: 'Municipal Leadership',
+    body: 'Steve understands city and town government because he has worked at the local level.',
+  },
+];
+---
+
+<BaseLayout
+  title="Steve Ouellette for State Representative — 8th Bristol District"
+  description="Believe in Steve. Local experience and real results for Massachusetts' 8th Bristol District."
+>
+  <!-- Section 1: Hero -->
+  <Hero />
+
+  <!-- Section 2: Local Experience -->
+  <section class="section section--white">
+    <div class="container">
+      <SectionHeading
+        title="Local experience you can recognize."
+        subtitle="Steve's background isn't from a classroom or a consultant's office — it comes from the communities he serves."
+      />
+      <div class="grid grid-3">
+        {experienceCards.map(({ icon, title, body }) => (
+          <div class="exp-card card">
+            <div class="exp-icon" aria-hidden="true">{icon}</div>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Priorities preview -->
+  <section class="section section--cream">
+    <div class="container">
+      <SectionHeading
+        title="Focused on what matters here."
+        subtitle="Steve's priorities start with the people and communities of the district — not national politics."
+      />
+      <div class="grid grid-3">
+        {issues.map(issue => (
+          <IssueCard title={issue.title} description={issue.description} />
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/priorities" class="btn btn-secondary">See all priorities</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: District results preview -->
+  <section class="section section--white">
+    <div class="container">
+      <SectionHeading
+        title="Helping the 8th Bristol get its fair share."
+        subtitle="From grants and earmarks to constituent service and local advocacy, Steve is focused on making state government work for the district."
+      />
+      <div class="grid grid-2">
+        {districtWins.slice(0, 2).map(win => (
+          <DistrictWinCard {...win} />
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/delivering-for-the-district" class="btn btn-secondary">See all district results</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Stay Connected / Signup -->
+  <section class="section section--dark" id="signup">
+    <div class="container">
+      <SectionHeading
+        title="Stay connected with Steve."
+        subtitle="Sign up for campaign updates, office hours, and ways to stay involved across the 8th Bristol District."
+      />
+      <SignupFormPlaceholder />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .exp-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .exp-icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .exp-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .exp-card p {
+    font-size: 0.95rem;
+    color: var(--color-slate);
+    max-width: none;
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+</style>

@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import DistrictWinCard from '../components/DistrictWinCard.astro';
+import { districtWins } from '../data/districtWins';
+---
+
+<BaseLayout
+  title="Delivering for the District — Steve Ouellette, 8th Bristol"
+  description="See how Steve Ouellette has delivered grants, earmarks, and practical support for the communities of the 8th Bristol District."
+>
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Delivering for the 8th Bristol</h1>
+      <p>
+        Steve's job is to make sure the district is heard at the State House —
+        and that local communities get practical support when it matters.
+      </p>
+    </div>
+  </div>
+
+  <section class="section section--cream">
+    <div class="container">
+
+      <!-- Verification notice -->
+      <div class="verification-notice info-box" role="note">
+        <strong>About this page:</strong> The entries below are placeholders. All items marked
+        "Needs verification" must be confirmed with citations and sources before the site launches.
+        Do not add dollar amounts, names, or program details until verified. See the launch checklist
+        in the README.
+      </div>
+
+      <SectionHeading
+        title="District results and community wins."
+        subtitle="From earmarks and grant support to food security and arts funding, Steve works to make state resources count for the 8th Bristol."
+      />
+
+      <div class="wins-grid">
+        {districtWins.map(win => (
+          <DistrictWinCard {...win} />
+        ))}
+      </div>
+
+      <div class="photo-strip">
+        <img
+          src="/images/ribbon-cutting.jpg"
+          alt="Steve Ouellette at a ribbon cutting ceremony in the 8th Bristol District"
+          class="strip-photo"
+        />
+        <img
+          src="/images/community-bikes.jpg"
+          alt="Steve Ouellette with community members at a local outdoor event"
+          class="strip-photo"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How it works section -->
+  <section class="section section--white">
+    <div class="container">
+      <SectionHeading
+        title="How Steve advocates for the district."
+        subtitle="Several ways Steve works to bring resources and attention to the 8th Bristol."
+        align="left"
+      />
+
+      <div class="how-grid">
+        <div class="how-card card">
+          <span class="accent-bar"></span>
+          <h3>Earmarks and Direct Funding</h3>
+          <p>
+            State budget earmarks can direct funds to specific community projects —
+            from infrastructure to cultural institutions. Steve advocates for
+            earmarks that reflect the district's priorities and needs.
+          </p>
+        </div>
+        <div class="how-card card">
+          <span class="accent-bar"></span>
+          <h3>Grant Navigation and Support</h3>
+          <p>
+            Many state and federal grant programs are available to cities, towns,
+            nonprofits, and schools. Steve's office helps local organizations
+            identify and navigate relevant opportunities.
+          </p>
+        </div>
+        <div class="how-card card">
+          <span class="accent-bar"></span>
+          <h3>Constituent Advocacy</h3>
+          <p>
+            When a constituent or organization runs into a problem with a state
+            agency or program, Steve's team works to connect them with the
+            right resources and move things forward.
+          </p>
+        </div>
+        <div class="how-card card">
+          <span class="accent-bar"></span>
+          <h3>Legislative Support</h3>
+          <p>
+            Steve votes on the state budget and legislation that affects the
+            district. His votes reflect the needs of working families, schools,
+            municipalities, and local organizations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark">
+    <div class="container cta-center">
+      <h2>Know of a community need?</h2>
+      <p>Steve's office can help connect local organizations with resources and advocate on behalf of the district.</p>
+      <div class="cta-buttons">
+        <a href="/constituent-services" class="btn btn-primary">Constituent Services</a>
+        <a href="/contact" class="btn btn-secondary--light">Contact Steve</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .verification-notice {
+    margin-bottom: 2.5rem;
+  }
+
+  .photo-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .strip-photo {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .photo-strip {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .wins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .how-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .how-card h3 {
+    font-size: 1rem;
+    color: var(--color-navy);
+  }
+
+  .how-card p {
+    font-size: 0.93rem;
+    color: var(--color-slate);
+    max-width: none;
+    line-height: 1.65;
+  }
+
+  .cta-center {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .cta-center h2 {
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-center p {
+    color: rgba(242, 243, 244, 0.8);
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+</style>

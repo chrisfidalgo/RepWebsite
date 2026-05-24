@@ -1,0 +1,189 @@
+---
+import type { DistrictWin } from '../data/districtWins';
+
+type Props = DistrictWin;
+
+const {
+  title,
+  community,
+  category,
+  amount,
+  fiscalYear,
+  description,
+  sourceUrl,
+  verificationStatus,
+} = Astro.props;
+
+const categoryColors: Record<DistrictWin['category'], string> = {
+  'Earmark': 'pill--navy',
+  'Grant Support': 'pill--blue',
+  'Constituent Service': 'pill--muted',
+  'Municipal Support': 'pill--blue',
+  'Food Security': 'pill--green',
+  'Education': 'pill--navy',
+  'Arts & Culture': 'pill--muted',
+  'Other': 'pill--outline',
+};
+---
+
+<article class="win-card card">
+  <div class="win-card-header">
+    <div class="win-card-meta">
+      <span class={`pill ${categoryColors[category]}`}>{category}</span>
+      {community && community !== 'TBD' && (
+        <span class="community-label">{community}</span>
+      )}
+      {community === 'TBD' && (
+        <span class="community-label tbd">[Community TBD]</span>
+      )}
+    </div>
+
+    {verificationStatus === 'Needs verification' && (
+      <span class="badge-needs-verification" aria-label="This item needs verification before launch">
+        ⚠ Needs verification
+      </span>
+    )}
+    {verificationStatus === 'Draft' && (
+      <span class="badge-draft" aria-label="This item is a draft">
+        Draft
+      </span>
+    )}
+    {verificationStatus === 'Verified' && (
+      <span class="badge-verified" aria-label="This item is verified">
+        ✓ Verified
+      </span>
+    )}
+  </div>
+
+  <h3>{title}</h3>
+  <p>{description}</p>
+
+  {(amount || fiscalYear) && (
+    <div class="win-details">
+      {amount && amount !== 'TBD' && (
+        <div class="win-detail">
+          <span class="detail-label">Amount</span>
+          <span class="detail-value">{amount}</span>
+        </div>
+      )}
+      {amount === 'TBD' && (
+        <div class="win-detail">
+          <span class="detail-label">Amount</span>
+          <span class="detail-value tbd">[TBD — add before launch]</span>
+        </div>
+      )}
+      {fiscalYear && fiscalYear !== 'TBD' && (
+        <div class="win-detail">
+          <span class="detail-label">Fiscal Year</span>
+          <span class="detail-value">{fiscalYear}</span>
+        </div>
+      )}
+      {fiscalYear === 'TBD' && (
+        <div class="win-detail">
+          <span class="detail-label">Fiscal Year</span>
+          <span class="detail-value tbd">[TBD]</span>
+        </div>
+      )}
+    </div>
+  )}
+
+  {sourceUrl && (
+    <a href={sourceUrl} class="source-link" target="_blank" rel="noopener noreferrer">
+      View source →
+    </a>
+  )}
+</article>
+
+<style>
+  .win-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .win-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .win-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .community-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-slate);
+    padding: 0.2rem 0.5rem;
+    background-color: #f0f2f5;
+    border-radius: 4px;
+  }
+
+  .community-label.tbd {
+    color: var(--color-muted-blue);
+    font-style: italic;
+  }
+
+  .win-card h3 {
+    font-size: 1.1rem;
+    color: var(--color-navy);
+    margin-top: 0.25rem;
+  }
+
+  .win-card p {
+    font-size: 0.93rem;
+    color: var(--color-slate);
+    line-height: 1.65;
+    max-width: none;
+  }
+
+  .win-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e8eef5;
+  }
+
+  .win-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .detail-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted-blue);
+  }
+
+  .detail-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-navy);
+  }
+
+  .detail-value.tbd {
+    font-style: italic;
+    color: var(--color-muted-blue);
+    font-weight: 400;
+  }
+
+  .source-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+  }
+</style>

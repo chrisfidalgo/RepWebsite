@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout
+  title="Constituent Services — Steve Ouellette, 8th Bristol District"
+  description="Steve Ouellette's office helps connect residents with resources, answer questions, and direct requests to the right place."
+>
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Constituent Services</h1>
+      <p>
+        Steve's team can help connect residents with resources, answer questions,
+        and direct requests to the right place.
+      </p>
+    </div>
+  </div>
+
+  <!-- Compliance notice -->
+  <div class="compliance-banner" role="note">
+    <div class="container">
+      <p>
+        <strong>Note:</strong> This campaign website can help route your message.
+        For official State House business, please use Representative Ouellette's
+        official legislative contact information.
+      </p>
+    </div>
+  </div>
+
+  <section class="section section--cream">
+    <div class="container">
+
+      <div class="services-grid">
+
+        <!-- Service 1: Help with a state issue -->
+        <div class="service-card card" id="state-issue">
+          <span class="accent-bar"></span>
+          <h2>Request help with a state issue</h2>
+          <p>
+            Running into a problem with a state agency, benefit program, or
+            government process? Steve's team can help you understand your
+            options, connect you with the right office, or advocate on your
+            behalf.
+          </p>
+          <p class="service-examples">
+            <strong>Examples:</strong> Unemployment questions, RMV issues,
+            MassHealth assistance, state benefit navigation, agency
+            communication problems.
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Request Help</a>
+        </div>
+
+        <!-- Service 2: Citation or resolution -->
+        <div class="service-card card" id="citation">
+          <span class="accent-bar"></span>
+          <h2>Request a citation or resolution</h2>
+          <p>
+            Citations and resolutions are formal acknowledgments from the
+            Massachusetts Legislature recognizing milestones, achievements,
+            organizations, and community events.
+          </p>
+          <p class="service-examples">
+            <strong>Examples:</strong> Retirements, anniversaries, graduations,
+            community recognition, organizational milestones, public service.
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Request Citation or Resolution</a>
+        </div>
+
+        <!-- Service 3: Invite Steve to an event -->
+        <div class="service-card card">
+          <span class="accent-bar"></span>
+          <h2>Invite Steve to an event</h2>
+          <p>
+            Steve welcomes invitations to community events, organizational
+            meetings, school visits, and local gatherings across the 8th
+            Bristol District. Reach out to share details.
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Send an Invitation</a>
+        </div>
+
+        <!-- Service 4: Office hours -->
+        <div class="service-card card">
+          <span class="accent-bar"></span>
+          <h2>Office hours</h2>
+          <p>
+            Steve periodically holds constituent office hours in the district.
+            Contact the campaign for information about upcoming office hours
+            in your community.
+          </p>
+          <p class="placeholder-note">
+            [PLACEHOLDER — Add office hours schedule or link to schedule when available]
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Ask About Office Hours</a>
+        </div>
+
+        <!-- Service 5: Contact the office -->
+        <div class="service-card card">
+          <span class="accent-bar"></span>
+          <h2>Contact the office</h2>
+          <p>
+            For general questions or to reach the campaign team, use the
+            contact form or the office information below.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail-group">
+              <span class="contact-label">Campaign contact</span>
+              <a href="/contact" class="contact-value">Use the contact form →</a>
+            </div>
+            <div class="contact-detail-group">
+              <span class="contact-label">Official office phone</span>
+              <span class="contact-value placeholder">[VERIFY — Add official number before launch]</span>
+            </div>
+            <div class="contact-detail-group">
+              <span class="contact-label">Official email</span>
+              <span class="contact-value placeholder">[VERIFY — Add official email before launch]</span>
+            </div>
+            <div class="contact-detail-group">
+              <span class="contact-label">District office</span>
+              <span class="contact-value placeholder">[VERIFY — Add district office address before launch]</span>
+            </div>
+          </div>
+
+          <a href="/contact" class="btn btn-primary service-btn">Contact the Campaign</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Official office disclaimer -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="official-disclaimer info-box">
+        <h3>Official State House Contact</h3>
+        <p>
+          For matters requiring official legislative action or correspondence,
+          please contact Representative Ouellette's official State House office
+          directly. Campaign and official legislative staff are separate.
+        </p>
+        <p class="placeholder-note">
+          [VERIFY — Add official State House address, phone, and email before launch.
+          Confirm with the campaign that official contact info may appear on this site
+          and how it should be framed.]
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .compliance-banner {
+    background-color: #e8eef5;
+    border-bottom: 2px solid var(--color-blue);
+    padding-block: 1rem;
+  }
+
+  .compliance-banner p {
+    font-size: 0.9rem;
+    color: var(--color-navy);
+    max-width: none;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .service-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .service-card p {
+    font-size: 0.93rem;
+    color: var(--color-charcoal);
+    max-width: none;
+    line-height: 1.65;
+  }
+
+  .service-examples {
+    background-color: #f5f7fb;
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem !important;
+    color: var(--color-slate) !important;
+  }
+
+  .service-btn {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  .placeholder-note {
+    font-size: 0.83rem !important;
+    color: #e07b00 !important;
+    font-style: italic;
+    background-color: #fff9ee;
+    border: 1px solid #ffd07a;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: #f5f7fb;
+    border-radius: var(--radius);
+  }
+
+  .contact-detail-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .contact-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted-blue);
+  }
+
+  .contact-value {
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+    text-decoration: none;
+  }
+
+  .contact-value:not(.placeholder):hover {
+    text-decoration: underline;
+    color: var(--color-blue);
+  }
+
+  .contact-value.placeholder {
+    color: #e07b00;
+    font-style: italic;
+    font-size: 0.82rem;
+  }
+
+  .official-disclaimer {
+    max-width: 720px;
+  }
+
+  .official-disclaimer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-navy);
+  }
+
+  .official-disclaimer p {
+    font-size: 0.93rem;
+    color: var(--color-charcoal);
+    max-width: none;
+    margin-bottom: 0.5rem;
+  }
+</style>

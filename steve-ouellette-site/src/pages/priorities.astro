@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import IssueCard from '../components/IssueCard.astro';
+import { issues } from '../data/issues';
+
+const extendedIssues = [
+  {
+    title: 'Supporting Unions and Working Families',
+    description:
+      'Steve believes working people deserve fair wages, safe conditions, and a government that respects the dignity of labor.',
+    extended:
+      'Unions built the middle class on the South Coast. Steve supports collective bargaining rights, workplace safety protections, and policies that keep good jobs in Massachusetts. He stands with workers — whether in the building trades, public service, or private sector.',
+  },
+  {
+    title: 'Strengthening Public Schools',
+    description:
+      'Strong public schools are the foundation of strong communities. Steve supports investments that help students, educators, and families succeed.',
+    extended:
+      'Every child in the 8th Bristol deserves access to a quality public education, regardless of their ZIP code. Steve supports fair education funding, resources for teachers, and programs that help kids from all backgrounds reach their potential.',
+  },
+  {
+    title: 'Fighting Food Insecurity',
+    description:
+      'No family should have to wonder where their next meal is coming from. Steve supports community-based food security efforts and practical state support for local organizations.',
+    extended:
+      'Food insecurity affects families across the district — in cities and towns alike. Steve works to support local food pantries, school meal programs, and state-level investments in food access. He believes practical support for community organizations is more effective than top-down mandates.',
+  },
+  {
+    title: 'Arts, Culture, and Community Life',
+    description:
+      'Arts and culture help communities thrive. Steve supports investments that bring people together and strengthen local identity.',
+    extended:
+      'From Fall River to New Bedford, the South Coast has a rich cultural heritage worth preserving and celebrating. Steve supports funding for local arts organizations, cultural institutions, and community events that reflect the diversity and character of the district.',
+  },
+  {
+    title: 'Helping Cities and Towns Get Results',
+    description:
+      'State government should be a partner to local communities. Steve works to help cities and towns navigate state resources, funding, and constituent needs.',
+    extended:
+      'Municipalities across the 8th Bristol often face the same challenges: limited budgets, aging infrastructure, and residents who need help connecting to state programs. Steve advocates for direct municipal aid, local earmarks, and responsive state partnerships that help cities and towns do their jobs.',
+  },
+  {
+    title: 'Practical Constituent Service',
+    description:
+      "Government should work for people. Steve's team helps constituents connect with the right resources, navigate state systems, and get the answers they need.",
+    extended:
+      "Whether you need help with a state agency, want to request a citation or resolution, or just have a question about your community — Steve's office is here to help. Good constituent service is not a favor; it's the job.",
+  },
+];
+---
+
+<BaseLayout
+  title="Priorities — Steve Ouellette for State Representative"
+  description="Steve Ouellette's priorities for the 8th Bristol District: working families, public schools, food security, arts, and practical constituent service."
+>
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Priorities for the 8th Bristol</h1>
+      <p>
+        Steve's priorities start with the people and communities of the district:
+        working families, students, seniors, local organizations, and the cities
+        and towns that keep daily life moving.
+      </p>
+    </div>
+  </div>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="priorities-grid">
+        {extendedIssues.map(issue => (
+          <IssueCard
+            title={issue.title}
+            description={issue.description}
+            extendedDescription={issue.extended}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="section section--dark">
+    <div class="container cta-center">
+      <h2>Questions about Steve's positions?</h2>
+      <p>Reach out directly — the campaign is happy to talk about the issues that matter to you.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-primary">Contact Steve</a>
+        <a href="/#signup" class="btn btn-secondary--light">Sign up for updates</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .priorities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .cta-center {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .cta-center h2 {
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-center p {
+    color: rgba(242, 243, 244, 0.8);
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+</style>

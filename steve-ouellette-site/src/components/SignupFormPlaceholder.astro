@@ -1,0 +1,240 @@
+---
+interface Props {
+  showGoogleEmbed?: boolean;
+}
+
+const { showGoogleEmbed = false } = Astro.props;
+---
+
+<div class="signup-form-wrapper">
+  <div class="form-placeholder-banner" role="note">
+    ⚠ FORM PLACEHOLDER — Connect to Google Forms before launch. See README for instructions.
+  </div>
+
+  {showGoogleEmbed ? (
+    <!-- Replace this comment block with the actual Google Form iframe embed -->
+    <!-- Example:
+    <iframe
+      src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+      width="100%"
+      height="900"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="Campaign signup form"
+      loading="lazy"
+    >
+      Loading form...
+    </iframe>
+    -->
+    <div class="embed-placeholder" aria-hidden="true">
+      [Google Form iframe embed goes here — replace this div with the iframe from Google Forms]
+    </div>
+  ) : (
+    <form class="placeholder-form" aria-label="Campaign signup form (placeholder — not connected)" novalidate>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="first-name">First Name <span aria-hidden="true">*</span></label>
+          <input
+            class="form-input"
+            type="text"
+            id="first-name"
+            name="first-name"
+            autocomplete="given-name"
+            disabled
+            aria-disabled="true"
+            placeholder="First name"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="last-name">Last Name <span aria-hidden="true">*</span></label>
+          <input
+            class="form-input"
+            type="text"
+            id="last-name"
+            name="last-name"
+            autocomplete="family-name"
+            disabled
+            aria-disabled="true"
+            placeholder="Last name"
+          />
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address <span aria-hidden="true">*</span></label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            disabled
+            aria-disabled="true"
+            placeholder="you@example.com"
+          />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number</label>
+          <input
+            class="form-input"
+            type="tel"
+            id="phone"
+            name="phone"
+            autocomplete="tel"
+            disabled
+            aria-disabled="true"
+            placeholder="(508) 555-0100"
+          />
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="community">Community</label>
+          <select class="form-select" id="community" name="community" disabled aria-disabled="true">
+            <option value="">Select your community</option>
+            <option>Acushnet</option>
+            <option>Fall River</option>
+            <option>Freetown</option>
+            <option>New Bedford</option>
+            <option>Westport</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="zip">ZIP Code</label>
+          <input
+            class="form-input"
+            type="text"
+            id="zip"
+            name="zip"
+            autocomplete="postal-code"
+            disabled
+            aria-disabled="true"
+            placeholder="02XXX"
+            maxlength="10"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="help">How would you like to help?</label>
+        <select class="form-select" id="help" name="help" disabled aria-disabled="true">
+          <option value="">Select an option (optional)</option>
+          <option>Volunteer</option>
+          <option>Yard sign</option>
+          <option>Spread the word</option>
+          <option>Attend an event</option>
+          <option>Stay informed</option>
+        </select>
+      </div>
+
+      <div class="form-group consent-group">
+        <label class="consent-label">
+          <input
+            type="checkbox"
+            name="consent"
+            disabled
+            aria-disabled="true"
+            class="consent-checkbox"
+          />
+          <span>
+            I agree to receive campaign updates from the Committee to Elect Ouellette via email and/or SMS.
+          </span>
+        </label>
+      </div>
+
+      <p class="opt-in-notice">
+        By submitting this form, you agree to receive campaign updates from the
+        Committee to Elect Ouellette. Message and data rates may apply for SMS
+        updates. You can unsubscribe at any time.
+        <em>This language is a placeholder and should be reviewed before launch.</em>
+      </p>
+
+      <button type="submit" class="btn btn-primary" disabled aria-disabled="true">
+        Sign Up for Updates
+      </button>
+    </form>
+  )}
+</div>
+
+<style>
+  .signup-form-wrapper {
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .embed-placeholder {
+    background-color: #f0f2f5;
+    border: 2px dashed var(--color-muted-blue);
+    border-radius: var(--radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--color-slate);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .placeholder-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .placeholder-form :global(.form-label) {
+    color: #ffffff;
+  }
+
+  .placeholder-form .form-input,
+  .placeholder-form .form-select {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+
+  .consent-group {
+    background-color: #f0f4f8;
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+
+  .consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: default;
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+  }
+
+  .consent-checkbox {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    cursor: not-allowed;
+  }
+
+  .opt-in-notice {
+    font-size: 0.78rem;
+    color: var(--color-muted-blue);
+    line-height: 1.6;
+    max-width: none;
+  }
+
+  .opt-in-notice em {
+    display: block;
+    margin-top: 0.25rem;
+    color: #e07b00;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .placeholder-form .btn {
+    align-self: flex-start;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+</style>

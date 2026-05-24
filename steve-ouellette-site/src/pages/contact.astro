@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import SignupFormPlaceholder from '../components/SignupFormPlaceholder.astro';
+---
+
+<BaseLayout
+  title="Contact Steve Ouellette — 8th Bristol District Campaign"
+  description="Get in touch with Steve Ouellette's campaign. Sign up for updates, request a citation, or ask about constituent services."
+>
+  <!-- Page hero -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Contact Steve</h1>
+      <p>
+        We're here to help. Use the options below to connect with the campaign
+        or request specific services.
+      </p>
+    </div>
+  </div>
+
+  <section class="section section--cream">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Section 1: Sign up -->
+        <div class="contact-section card" id="signup">
+          <span class="accent-bar"></span>
+          <h2>Sign up for campaign updates</h2>
+          <p>
+            Stay informed about Steve's work in the district, office hours,
+            events, and ways to get involved.
+          </p>
+          <SignupFormPlaceholder />
+        </div>
+
+        <!-- Section 2: Contact the campaign -->
+        <div class="contact-section card" id="campaign-contact">
+          <span class="accent-bar"></span>
+          <h2>Contact the campaign</h2>
+          <p>
+            Have a question, comment, or want to connect with the campaign team?
+            Use this form to send us a message.
+          </p>
+
+          <div class="form-placeholder-banner" role="note">
+            ⚠ FORM PLACEHOLDER — Replace with a Google Form embed or approved contact form before launch.
+          </div>
+
+          <!-- Replace this with approved contact form -->
+          <div class="google-form-placeholder" aria-label="Contact form placeholder">
+            <!--
+              INSTRUCTIONS: Replace this div with a Google Form iframe embed.
+
+              Example:
+              <iframe
+                src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+                width="100%"
+                height="700"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="Campaign contact form"
+                loading="lazy"
+              >
+                Loading form...
+              </iframe>
+            -->
+            <p>[Google Form embed goes here — replace this block with the iframe from Google Forms]</p>
+          </div>
+        </div>
+
+        <!-- Section 3: Citation or resolution -->
+        <div class="contact-section card" id="citation">
+          <span class="accent-bar"></span>
+          <h2>Request a citation or resolution</h2>
+          <p>
+            Citations and resolutions are formal acknowledgments from the
+            Massachusetts Legislature. They can recognize retirements,
+            anniversaries, achievements, and community milestones.
+          </p>
+          <p>
+            To request a citation or resolution, please reach out with the
+            following information:
+          </p>
+          <ul class="request-list">
+            <li>Name of person or organization being recognized</li>
+            <li>Nature of the achievement or milestone</li>
+            <li>Date of any event where it will be presented (if applicable)</li>
+            <li>Your contact information</li>
+          </ul>
+          <div class="form-placeholder-banner" role="note">
+            ⚠ FORM PLACEHOLDER — Connect to Google Forms or approved provider before launch.
+          </div>
+          <div class="google-form-placeholder" aria-label="Citation request form placeholder">
+            <p>[Citation request form goes here — replace with Google Form iframe]</p>
+          </div>
+        </div>
+
+        <!-- Section 4: Office hours -->
+        <div class="contact-section card" id="office-hours">
+          <span class="accent-bar"></span>
+          <h2>Ask about office hours</h2>
+          <p>
+            Steve periodically holds constituent office hours across the 8th
+            Bristol District. Contact the campaign to ask about upcoming
+            office hours in your community.
+          </p>
+          <p class="placeholder-note">
+            [PLACEHOLDER — Add office hours schedule when available.
+            Consider linking to a public calendar or Google Form RSVP.]
+          </p>
+          <a href="#campaign-contact" class="btn btn-primary">Contact the campaign</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy anchor -->
+  <div id="privacy" class="section section--white">
+    <div class="container">
+      <div class="privacy-block info-box">
+        <h3>Privacy and Data Use</h3>
+        <p>
+          Information submitted through this site may be used by the campaign to
+          respond to inquiries and provide updates. Full privacy language is pending
+          review and will be added before launch.
+        </p>
+        <p class="placeholder-note">
+          [PLACEHOLDER — Replace with reviewed privacy policy language before launch.]
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .contact-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-section p {
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+    max-width: none;
+    line-height: 1.7;
+  }
+
+  .request-list {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.93rem;
+    color: var(--color-charcoal);
+  }
+
+  .google-form-placeholder {
+    background-color: #f0f2f5;
+    border: 2px dashed var(--color-muted-blue);
+    border-radius: var(--radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--color-slate);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .placeholder-note {
+    font-size: 0.83rem !important;
+    color: #e07b00 !important;
+    font-style: italic;
+    background-color: #fff9ee;
+    border: 1px solid #ffd07a;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .privacy-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-navy);
+  }
+
+  .privacy-block p {
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+    max-width: none;
+    margin-bottom: 0.5rem;
+  }
+</style>

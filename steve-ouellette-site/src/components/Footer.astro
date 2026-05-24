@@ -1,0 +1,178 @@
+---
+const footerLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/priorities', label: 'Priorities' },
+  { href: '/delivering-for-the-district', label: 'Results for the District' },
+  { href: '/constituent-services', label: 'Constituent Services' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const communities = ['Acushnet', 'Fall River', 'Freetown', 'New Bedford', 'Westport'];
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-name">Steve Ouellette</span>
+        <span class="footer-tagline">Believe in Steve.</span>
+        <p class="footer-subtitle">Local Experience. Real Results.<br />Massachusetts' 8th Bristol District.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul role="list">
+          {footerLinks.map(({ href, label }) => (
+            <li><a href={href}>{label}</a></li>
+          ))}
+          <li><a href="/contact#privacy" aria-label="Privacy and data use policy">Privacy / Data Use</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-communities" aria-label="Communities served">
+      <span class="communities-label">Serving:</span>
+      {communities.map((c, i) => (
+        <span class="community-pill">
+          {c}{i < communities.length - 1 ? '' : ''}
+        </span>
+      ))}
+    </div>
+
+    <div class="footer-compliance">
+      <p class="disclaimer-primary">
+        Paid for by the Committee to Elect Ouellette.
+      </p>
+      <p class="disclaimer-secondary">
+        This is a campaign website. For official State House business, please contact
+        Representative Ouellette's official legislative office.
+      </p>
+      <p class="disclaimer-privacy">
+        Privacy note: Information submitted through this site may be used by the campaign
+        to respond to inquiries and provide updates. Full privacy language pending review.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+    padding-block: 3.5rem 2rem;
+    margin-top: auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    align-items: start;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .footer-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .footer-tagline {
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(242, 243, 244, 0.75);
+  }
+
+  .footer-subtitle {
+    font-size: 0.85rem;
+    color: rgba(242, 243, 244, 0.6);
+    line-height: 1.6;
+  }
+
+  .footer-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: right;
+  }
+
+  .footer-nav a {
+    color: rgba(242, 243, 244, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.15s;
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-white);
+  }
+
+  .footer-communities {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .communities-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(242, 243, 244, 0.55);
+    margin-right: 0.25rem;
+  }
+
+  .community-pill {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: rgba(242, 243, 244, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .footer-compliance {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .disclaimer-primary {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-white);
+  }
+
+  .disclaimer-secondary,
+  .disclaimer-privacy {
+    font-size: 0.8rem;
+    color: rgba(242, 243, 244, 0.55);
+    max-width: 80ch;
+  }
+
+  @media (max-width: 640px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-nav ul {
+      text-align: left;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+    }
+  }
+</style>
