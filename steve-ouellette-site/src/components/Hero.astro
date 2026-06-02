@@ -7,14 +7,20 @@
       <div class="hero-tagline-pill">8th Bristol District · Massachusetts</div>
       <h1 class="hero-headline">Believe in Steve.</h1>
       <p class="hero-subheadline">
-        Local experience. Real results. Steve Ouellette is working for the
-        communities of the 8th Bristol District.
+        Serving the 8th Bristol District through practical leadership,
+        community engagement, and responsive constituent service.
       </p>
       <p class="hero-body">
-        Steve has spent decades serving South Coast communities — in public
-        safety, municipal government, the trades, and now at the State House.
-        His approach is simple: listen first, work with people, and deliver
-        practical results for the district.
+        A lifelong South Coast resident, Steve Ouellette has spent decades
+        serving local communities through municipal leadership, regional
+        planning, infrastructure initiatives, and public service. Before
+        joining the Massachusetts House of Representatives, Steve served
+        multiple terms on the Westport Select Board, held leadership roles
+        in economic development and infrastructure oversight, and worked in
+        public facilities management and the skilled trades. Today, he
+        remains focused on supporting local communities, strengthening
+        public infrastructure, and ensuring residents have access to
+        responsive constituent services throughout the 8th Bristol District.
       </p>
 
       <div class="hero-actions">
@@ -23,6 +29,8 @@
       </div>
 
       <div class="hero-tertiary">
+        <a href="/constituent-services">Constituent Services →</a>
+        <span class="hero-tertiary-sep" aria-hidden="true">·</span>
         <a href="/constituent-services#citation">Request a citation or resolution →</a>
       </div>
     </div>
@@ -39,7 +47,7 @@
   <!-- Community pills strip -->
   <div class="hero-communities" aria-label="Communities served">
     <div class="container">
-      <span class="communities-prefix">Serving communities across:</span>
+      <span class="communities-prefix">Proudly serving:</span>
       {['Acushnet', 'Fall River', 'Freetown', 'New Bedford', 'Westport'].map(c => (
         <span class="community-chip">{c}</span>
       ))}
@@ -107,6 +115,13 @@
     margin-bottom: 1.25rem;
   }
 
+  .hero-tertiary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .hero-tertiary a {
     color: rgba(242, 243, 244, 0.75);
     font-size: 0.9rem;
@@ -116,6 +131,11 @@
 
   .hero-tertiary a:hover {
     color: var(--color-white);
+  }
+
+  .hero-tertiary-sep {
+    color: rgba(242, 243, 244, 0.4);
+    font-size: 0.9rem;
   }
 
   .hero-photo {

@@ -4,6 +4,7 @@ const footerLinks = [
   { href: '/about', label: 'About' },
   { href: '/priorities', label: 'Priorities' },
   { href: '/delivering-for-the-district', label: 'Results for the District' },
+  { href: '/community-updates', label: 'Community Updates' },
   { href: '/constituent-services', label: 'Constituent Services' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -15,9 +16,19 @@ const communities = ['Acushnet', 'Fall River', 'Freetown', 'New Bedford', 'Westp
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="footer-name">Steve Ouellette</span>
+        <div class="footer-logo-wrap">
+          <img
+            src="/images/wave-logo.png"
+            alt="Steve Ouellette, State Representative, 8th Bristol District"
+            class="footer-logo"
+          />
+        </div>
         <span class="footer-tagline">Believe in Steve.</span>
-        <p class="footer-subtitle">Local Experience. Real Results.<br />Massachusetts' 8th Bristol District.</p>
+        <div class="footer-contact">
+          <a href="tel:7745261599">(774) 526-1599</a>
+          <a href="mailto:Steve.Ouellette@mahouse.gov">Steve.Ouellette@mahouse.gov</a>
+          <span>24 Beacon Street, Room 33, Boston, MA 02133</span>
+        </div>
       </div>
 
       <nav class="footer-nav" aria-label="Footer navigation">
@@ -44,12 +55,13 @@ const communities = ['Acushnet', 'Fall River', 'Freetown', 'New Bedford', 'Westp
         Paid for by the Committee to Elect Ouellette.
       </p>
       <p class="disclaimer-secondary">
-        This is a campaign website. For official State House business, please contact
-        Representative Ouellette's official legislative office.
+        This is a campaign website. For official State House business, contact Representative
+        Ouellette's official legislative office at (617) 722-2060 or
+        Steve.Ouellette@mahouse.gov.
       </p>
       <p class="disclaimer-privacy">
         Privacy note: Information submitted through this site may be used by the campaign
-        to respond to inquiries and provide updates. Full privacy language pending review.
+        to respond to inquiries and provide updates.
       </p>
     </div>
   </div>
@@ -74,14 +86,22 @@ const communities = ['Acushnet', 'Fall River', 'Freetown', 'New Bedford', 'Westp
   .footer-brand {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.6rem;
   }
 
-  .footer-name {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-white);
+  .footer-logo-wrap {
+    background: white;
+    border-radius: 6px;
+    padding: 4px 10px;
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+  }
+
+  .footer-logo {
+    height: 36px;
+    width: auto;
+    display: block;
   }
 
   .footer-tagline {
@@ -90,10 +110,22 @@ const communities = ['Acushnet', 'Fall River', 'Freetown', 'New Bedford', 'Westp
     color: rgba(242, 243, 244, 0.75);
   }
 
-  .footer-subtitle {
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .footer-contact a,
+  .footer-contact span {
     font-size: 0.85rem;
-    color: rgba(242, 243, 244, 0.6);
-    line-height: 1.6;
+    color: rgba(242, 243, 244, 0.65);
+    text-decoration: none;
+  }
+
+  .footer-contact a:hover {
+    color: var(--color-white);
+    text-decoration: underline;
   }
 
   .footer-nav ul {

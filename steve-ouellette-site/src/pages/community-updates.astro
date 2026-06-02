@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const categories = [
+  'District Events',
+  'Grants & Funding',
+  'Legislative Updates',
+  'Recognitions',
+  'Infrastructure',
+  'Education',
+];
+
+// Placeholder posts — replace with real content as updates are published
+const placeholderPosts = [
+  {
+    title: 'Community Updates Coming Soon',
+    date: 'June 2026',
+    category: 'District Events',
+    excerpt:
+      'This section will feature ongoing updates about events, grants, legislative activity, and what\'s happening across the 8th Bristol District. Check back soon or sign up below to receive updates directly.',
+  },
+  {
+    title: 'Stay Connected for Grant Announcements',
+    date: 'June 2026',
+    category: 'Grants & Funding',
+    excerpt:
+      'When state grant funding is secured for communities in the 8th Bristol District, announcements will be posted here. Sign up for updates to be notified when new funding is announced.',
+  },
+  {
+    title: 'Legislative Updates from the State House',
+    date: 'June 2026',
+    category: 'Legislative Updates',
+    excerpt:
+      'Session updates, committee activity, and plain-language summaries of legislation affecting South Coast communities will be shared here throughout the legislative year.',
+  },
+];
+---
+
+<BaseLayout
+  title="Community Updates — Steve Ouellette, 8th Bristol District"
+  description="Stay informed about district events, grant announcements, legislative activity, and community news from Representative Steve Ouellette's office."
+>
+  <!-- Page hero -->
+  <div class="page-hero updates-hero">
+    <div class="container updates-hero-inner">
+      <div class="updates-hero-text">
+        <h1>Community Updates</h1>
+        <p>
+          Stay informed about district events, grant announcements, legislative
+          activity, and the people and organizations moving our communities forward.
+        </p>
+      </div>
+      <div class="updates-hero-img" aria-hidden="true">
+        <img
+          src="/images/campaign-supporters.jpg"
+          alt="Steve Ouellette with community supporters across the 8th Bristol District"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Intro + category filter -->
+  <section class="section section--white">
+    <div class="container">
+      <p class="updates-intro">
+        This page will feature ongoing updates from Representative Ouellette's office —
+        including community spotlights, legislative summaries, local event coverage,
+        grant and funding announcements, infrastructure project updates, district
+        visits, and student and small business recognitions.
+      </p>
+
+      <div class="category-chips" aria-label="Update categories">
+        {categories.map(cat => (
+          <span class="category-chip">{cat}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Updates grid -->
+  <section class="section section--cream">
+    <div class="container">
+      <SectionHeading
+        title="Latest Updates"
+        subtitle="New posts will appear here as they are published."
+      />
+
+      <div class="updates-grid">
+        {placeholderPosts.map(post => (
+          <article class="update-card card">
+            <div class="update-card-meta">
+              <span class="update-category">{post.category}</span>
+              <span class="update-date">{post.date}</span>
+            </div>
+            <h3 class="update-title">{post.title}</h3>
+            <p class="update-excerpt">{post.excerpt}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sign up CTA -->
+  <section class="section section--dark">
+    <div class="container signup-cta">
+      <div class="signup-cta-text">
+        <h2>Don't Miss an Update</h2>
+        <p>
+          Sign up to receive occasional updates about community events, legislative
+          activity, grants, and initiatives across the 8th Bristol District —
+          delivered directly to your inbox.
+        </p>
+      </div>
+      <div class="signup-cta-actions">
+        <a href="/#signup" class="btn btn-primary">Sign Up for Updates</a>
+        <a href="/contact" class="btn btn-secondary--light">Contact the Office</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .updates-hero {
+    padding-bottom: 0;
+  }
+
+  .updates-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 3rem;
+    align-items: center;
+    padding-bottom: 3rem;
+  }
+
+  .updates-hero-text h1 {
+    margin-bottom: 0.75rem;
+  }
+
+  .updates-hero-text p {
+    font-size: 1.1rem;
+    color: rgba(242, 243, 244, 0.85);
+    line-height: 1.65;
+    max-width: none;
+  }
+
+  .updates-hero-img img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    max-height: 300px;
+    display: block;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .updates-intro {
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    line-height: 1.75;
+    max-width: 72ch;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .category-chip {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    background-color: #e8eef5;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-navy);
+    border: 1px solid rgba(8, 77, 137, 0.15);
+  }
+
+  .updates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .update-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .update-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .update-category {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    background-color: #e8eef5;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .update-date {
+    font-size: 0.8rem;
+    color: var(--color-muted-blue);
+  }
+
+  .update-title {
+    font-size: 1.1rem;
+    color: var(--color-navy);
+    line-height: 1.35;
+  }
+
+  .update-excerpt {
+    font-size: 0.93rem;
+    color: var(--color-charcoal);
+    line-height: 1.65;
+    max-width: none;
+  }
+
+  /* Sign up CTA */
+  .signup-cta {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .signup-cta h2 {
+    font-size: 1.6rem;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+  }
+
+  .signup-cta p {
+    font-size: 1rem;
+    color: rgba(242, 243, 244, 0.8);
+    max-width: 55ch;
+    line-height: 1.65;
+  }
+
+  .signup-cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 820px) {
+    .updates-hero-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .updates-hero-img {
+      display: none;
+    }
+
+    .signup-cta {
+      grid-template-columns: 1fr;
+    }
+
+    .signup-cta-actions {
+      flex-direction: row;
+    }
+  }
+</style>

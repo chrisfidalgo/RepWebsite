@@ -4,6 +4,7 @@ const navLinks = [
   { href: '/about', label: 'About Steve' },
   { href: '/priorities', label: 'Priorities' },
   { href: '/delivering-for-the-district', label: 'Results for the District' },
+  { href: '/community-updates', label: 'Community Updates' },
   { href: '/constituent-services', label: 'Constituent Services' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -14,8 +15,13 @@ const currentPath = Astro.url.pathname;
 <header class="site-header" role="banner">
   <div class="container header-inner">
     <a href="/" class="site-logo" aria-label="Steve Ouellette — Home">
-      <span class="logo-name">Steve Ouellette</span>
-      <span class="logo-title">State Representative · 8th Bristol District</span>
+      <div class="logo-img-wrap">
+        <img
+          src="/images/wave-logo.png"
+          alt="Steve Ouellette, State Representative, 8th Bristol District"
+          class="logo-img"
+        />
+      </div>
     </a>
 
     <nav class="desktop-nav" aria-label="Main navigation">
@@ -122,31 +128,28 @@ const currentPath = Astro.url.pathname;
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding-block: 0.75rem;
+    padding-block: 0.6rem;
   }
 
   .site-logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     text-decoration: none;
     flex-shrink: 0;
-    line-height: 1.2;
   }
 
-  .logo-name {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-white);
-    letter-spacing: -0.01em;
+  .logo-img-wrap {
+    background: white;
+    border-radius: 6px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
   }
 
-  .logo-title {
-    font-size: 0.7rem;
-    color: rgba(242, 243, 244, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 500;
+  .logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
   }
 
   .desktop-nav {
@@ -162,10 +165,10 @@ const currentPath = Astro.url.pathname;
 
   .desktop-nav a {
     display: block;
-    padding: 0.45rem 0.75rem;
+    padding: 0.45rem 0.65rem;
     color: rgba(242, 243, 244, 0.85);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
     border-radius: var(--radius);
     transition: color 0.15s, background-color 0.15s;
@@ -274,7 +277,7 @@ const currentPath = Astro.url.pathname;
   }
 
   /* Responsive breakpoints */
-  @media (max-width: 900px) {
+  @media (max-width: 980px) {
     .desktop-nav {
       display: none;
     }

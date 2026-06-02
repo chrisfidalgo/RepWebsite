@@ -24,7 +24,7 @@ import SectionHeading from '../components/SectionHeading.astro';
       <p>
         <strong>Note:</strong> This campaign website can help route your message.
         For official State House business, please use Representative Ouellette's
-        official legislative contact information.
+        official legislative contact information listed below.
       </p>
     </div>
   </div>
@@ -34,10 +34,10 @@ import SectionHeading from '../components/SectionHeading.astro';
 
       <div class="services-grid">
 
-        <!-- Service 1: Help with a state issue -->
+        <!-- Service 1: State Agency Assistance -->
         <div class="service-card card" id="state-issue">
           <span class="accent-bar"></span>
-          <h2>Request help with a state issue</h2>
+          <h2>State Agency Assistance</h2>
           <p>
             Running into a problem with a state agency, benefit program, or
             government process? Steve's team can help you understand your
@@ -45,17 +45,80 @@ import SectionHeading from '../components/SectionHeading.astro';
             behalf.
           </p>
           <p class="service-examples">
-            <strong>Examples:</strong> Unemployment questions, RMV issues,
-            MassHealth assistance, state benefit navigation, agency
-            communication problems.
+            <strong>Examples:</strong> MassHealth, unemployment benefits, RMV issues,
+            state benefit navigation, housing programs, agency communication problems.
           </p>
           <a href="/contact" class="btn btn-primary service-btn">Request Help</a>
         </div>
 
-        <!-- Service 2: Citation or resolution -->
+        <!-- Service 2: Veterans Resources -->
+        <div class="service-card card">
+          <span class="accent-bar"></span>
+          <h2>Veterans Resources</h2>
+          <p>
+            Steve's office can connect veterans and their families with state and
+            federal benefits, services, and support programs available through
+            the Commonwealth and local organizations.
+          </p>
+          <p class="service-examples">
+            <strong>Examples:</strong> Veterans benefits navigation, VA assistance,
+            local veterans services referrals, state veterans programs.
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Contact the Office</a>
+        </div>
+
+        <!-- Service 3: Senior Services -->
+        <div class="service-card card">
+          <span class="accent-bar"></span>
+          <h2>Senior Services</h2>
+          <p>
+            Our office can connect seniors with Council on Aging programs,
+            housing resources, transportation assistance, and other services
+            available across the district.
+          </p>
+          <p class="service-examples">
+            <strong>Examples:</strong> Council on Aging referrals, housing resources,
+            senior transportation, SHINE health insurance counseling, benefit assistance.
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Contact the Office</a>
+        </div>
+
+        <!-- Service 4: Transportation Assistance -->
+        <div class="service-card card">
+          <span class="accent-bar"></span>
+          <h2>Transportation Assistance</h2>
+          <p>
+            Our team can help residents navigate transportation concerns, RMV
+            issues, and accessibility questions related to public transit and
+            state transportation services.
+          </p>
+          <p class="service-examples">
+            <strong>Examples:</strong> RMV problems, transit service concerns,
+            accessibility questions, transportation program referrals.
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Contact the Office</a>
+        </div>
+
+        <!-- Service 5: Grants & Programs -->
+        <div class="service-card card">
+          <span class="accent-bar"></span>
+          <h2>Grants &amp; Programs</h2>
+          <p>
+            Steve's office can provide guidance on state grant programs and
+            funding opportunities available to organizations, nonprofits, and
+            municipalities across the 8th Bristol District.
+          </p>
+          <p class="service-examples">
+            <strong>Examples:</strong> Municipal grant programs, nonprofit funding
+            opportunities, state infrastructure funding, community program grants.
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Contact the Office</a>
+        </div>
+
+        <!-- Service 6: Citation or resolution -->
         <div class="service-card card" id="citation">
           <span class="accent-bar"></span>
-          <h2>Request a citation or resolution</h2>
+          <h2>Request a Citation or Resolution</h2>
           <p>
             Citations and resolutions are formal acknowledgments from the
             Massachusetts Legislature recognizing milestones, achievements,
@@ -68,83 +131,57 @@ import SectionHeading from '../components/SectionHeading.astro';
           <a href="/contact" class="btn btn-primary service-btn">Request Citation or Resolution</a>
         </div>
 
-        <!-- Service 3: Invite Steve to an event -->
-        <div class="service-card card">
-          <span class="accent-bar"></span>
-          <h2>Invite Steve to an event</h2>
-          <p>
-            Steve welcomes invitations to community events, organizational
-            meetings, school visits, and local gatherings across the 8th
-            Bristol District. Reach out to share details.
-          </p>
-          <a href="/contact" class="btn btn-primary service-btn">Send an Invitation</a>
-        </div>
-
-        <!-- Service 4: Office hours -->
-        <div class="service-card card">
-          <span class="accent-bar"></span>
-          <h2>Office hours</h2>
-          <p>
-            Steve periodically holds constituent office hours in the district.
-            Contact the campaign for information about upcoming office hours
-            in your community.
-          </p>
-          <p class="placeholder-note">
-            [PLACEHOLDER — Add office hours schedule or link to schedule when available]
-          </p>
-          <a href="/contact" class="btn btn-primary service-btn">Ask About Office Hours</a>
-        </div>
-
-        <!-- Service 5: Contact the office -->
-        <div class="service-card card">
-          <span class="accent-bar"></span>
-          <h2>Contact the office</h2>
-          <p>
-            For general questions or to reach the campaign team, use the
-            contact form or the office information below.
-          </p>
-
-          <div class="contact-details">
-            <div class="contact-detail-group">
-              <span class="contact-label">Campaign contact</span>
-              <a href="/contact" class="contact-value">Use the contact form →</a>
-            </div>
-            <div class="contact-detail-group">
-              <span class="contact-label">Official office phone</span>
-              <span class="contact-value placeholder">[VERIFY — Add official number before launch]</span>
-            </div>
-            <div class="contact-detail-group">
-              <span class="contact-label">Official email</span>
-              <span class="contact-value placeholder">[VERIFY — Add official email before launch]</span>
-            </div>
-            <div class="contact-detail-group">
-              <span class="contact-label">District office</span>
-              <span class="contact-value placeholder">[VERIFY — Add district office address before launch]</span>
-            </div>
-          </div>
-
-          <a href="/contact" class="btn btn-primary service-btn">Contact the Campaign</a>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Official office disclaimer -->
+  <!-- Official office contact -->
   <section class="section section--white">
     <div class="container">
-      <div class="official-disclaimer info-box">
-        <h3>Official State House Contact</h3>
-        <p>
-          For matters requiring official legislative action or correspondence,
-          please contact Representative Ouellette's official State House office
-          directly. Campaign and official legislative staff are separate.
-        </p>
-        <p class="placeholder-note">
-          [VERIFY — Add official State House address, phone, and email before launch.
-          Confirm with the campaign that official contact info may appear on this site
-          and how it should be framed.]
-        </p>
+      <div class="official-contact-layout">
+        <div class="official-disclaimer info-box">
+          <h3>Official State House Contact</h3>
+          <p>
+            For matters requiring official legislative action or correspondence,
+            please contact Representative Ouellette's official State House office
+            directly. Campaign and official legislative staff are separate.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail-group">
+              <span class="contact-label">Boston State House</span>
+              <span class="contact-value">24 Beacon Street, Room 33, Boston, MA 02133</span>
+            </div>
+            <div class="contact-detail-group">
+              <span class="contact-label">Boston Office Phone</span>
+              <a href="tel:6177222060" class="contact-value">(617) 722-2060</a>
+            </div>
+            <div class="contact-detail-group">
+              <span class="contact-label">District Office Phone</span>
+              <a href="tel:5086770905" class="contact-value">(508) 677-0905</a>
+            </div>
+            <div class="contact-detail-group">
+              <span class="contact-label">Official Email</span>
+              <a href="mailto:Steve.Ouellette@mahouse.gov" class="contact-value">Steve.Ouellette@mahouse.gov</a>
+            </div>
+            <div class="contact-detail-group">
+              <span class="contact-label">Campaign Contact</span>
+              <a href="/contact" class="contact-value">Use the contact form →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Invite Steve card -->
+        <div class="invite-card card">
+          <span class="accent-bar"></span>
+          <h3>Invite Steve to an Event</h3>
+          <p>
+            Steve welcomes invitations to community events, organizational
+            meetings, school visits, and local gatherings across the 8th
+            Bristol District.
+          </p>
+          <a href="/contact" class="btn btn-primary service-btn">Send an Invitation</a>
+        </div>
       </div>
     </div>
   </section>
@@ -199,21 +236,32 @@ import SectionHeading from '../components/SectionHeading.astro';
     margin-top: 0.5rem;
   }
 
-  .placeholder-note {
-    font-size: 0.83rem !important;
-    color: #e07b00 !important;
-    font-style: italic;
-    background-color: #fff9ee;
-    border: 1px solid #ffd07a;
-    border-radius: 4px;
-    padding: 0.5rem 0.75rem;
+  /* Official contact section */
+  .official-contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .official-disclaimer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-navy);
+  }
+
+  .official-disclaimer p {
+    font-size: 0.93rem;
+    color: var(--color-charcoal);
+    max-width: none;
+    margin-bottom: 1rem;
   }
 
   .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    padding: 1rem;
+    gap: 0.85rem;
+    padding: 1.25rem;
     background-color: #f5f7fb;
     border-radius: var(--radius);
   }
@@ -233,36 +281,36 @@ import SectionHeading from '../components/SectionHeading.astro';
   }
 
   .contact-value {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--color-charcoal);
     text-decoration: none;
   }
 
-  .contact-value:not(.placeholder):hover {
+  .contact-value:hover {
     text-decoration: underline;
     color: var(--color-blue);
   }
 
-  .contact-value.placeholder {
-    color: #e07b00;
-    font-style: italic;
-    font-size: 0.82rem;
+  .invite-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
-  .official-disclaimer {
-    max-width: 720px;
+  .invite-card h3 {
+    font-size: 1.2rem;
   }
 
-  .official-disclaimer h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    color: var(--color-navy);
-  }
-
-  .official-disclaimer p {
+  .invite-card p {
     font-size: 0.93rem;
     color: var(--color-charcoal);
     max-width: none;
-    margin-bottom: 0.5rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 860px) {
+    .official-contact-layout {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

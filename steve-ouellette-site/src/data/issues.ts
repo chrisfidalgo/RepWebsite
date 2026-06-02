@@ -6,33 +6,33 @@ export type Issue = {
 
 export const issues: Issue[] = [
   {
-    title: 'Supporting Unions and Working Families',
+    title: 'Infrastructure & Transportation',
     description:
-      'Steve believes working people deserve fair wages, safe conditions, and a government that respects the dignity of labor.',
+      'Supporting long-term investments in roads, public facilities, transportation systems, and resilient infrastructure that strengthen communities across the South Coast.',
   },
   {
-    title: 'Strengthening Public Schools',
+    title: 'Local Government & Municipal Partnerships',
     description:
-      'Strong public schools are the foundation of strong communities. Steve supports investments that help students, educators, and families succeed.',
+      'Working collaboratively with cities, towns, and regional organizations to support effective municipal operations and sustainable community planning.',
   },
   {
-    title: 'Fighting Food Insecurity',
+    title: 'Public Safety & Emergency Preparedness',
     description:
-      'No family should have to wonder where their next meal is coming from. Steve supports community-based food security efforts and practical state support for local organizations.',
+      'Supporting first responders, emergency preparedness initiatives, and policies that strengthen public safety and community resilience.',
   },
   {
-    title: 'Arts, Culture, and Community Life',
+    title: 'Workforce Development & Skilled Trades',
     description:
-      'Arts and culture help communities thrive. Steve supports investments that bring people together and strengthen local identity.',
+      'Promoting vocational education, workforce opportunities, and skilled trades that help support strong local economies and career pathways.',
   },
   {
-    title: 'Helping Cities and Towns Get Results',
+    title: 'Coastal Communities, Agriculture & Fisheries',
     description:
-      'State government should be a partner to local communities. Steve works to help cities and towns navigate state resources, funding, and constituent needs.',
+      'Advocating for the industries, infrastructure, and natural resources that remain vital to South Coast communities.',
   },
   {
-    title: 'Practical Constituent Service',
+    title: 'Economic & Community Development',
     description:
-      "Government should work for people. Steve's team helps constituents connect with the right resources, navigate state systems, and get the answers they need.",
+      'Supporting local businesses, regional economic growth, and initiatives that help communities remain vibrant and sustainable.',
   },
 ];

@@ -8,21 +8,36 @@ import SignupFormPlaceholder from '../components/SignupFormPlaceholder.astro';
 import { issues } from '../data/issues';
 import { districtWins } from '../data/districtWins';
 
-const experienceCards = [
-  {
-    icon: '🛡',
-    title: 'Public Safety Service',
-    body: 'Steve has served in local public safety roles and understands the people who keep communities safe.',
-  },
-  {
-    icon: '🔧',
-    title: 'Trades and Working Families',
-    body: 'Steve brings a practical, hands-on background rooted in the trades and working-class communities.',
-  },
+const serviceCards = [
   {
     icon: '🏛',
-    title: 'Municipal Leadership',
-    body: 'Steve understands city and town government because he has worked at the local level.',
+    title: 'State Agency Assistance',
+    body: 'Help navigating MassHealth, unemployment, RMV, housing programs, and other state agencies.',
+  },
+  {
+    icon: '🎖',
+    title: 'Veterans Resources',
+    body: 'Connecting veterans with state and federal benefits, services, and support programs.',
+  },
+  {
+    icon: '👴',
+    title: 'Senior Services',
+    body: 'Referrals to Council on Aging programs, housing resources, and senior transportation assistance.',
+  },
+  {
+    icon: '🚌',
+    title: 'Transportation Assistance',
+    body: 'Help with transit concerns, RMV issues, and transportation accessibility questions.',
+  },
+  {
+    icon: '📋',
+    title: 'Grants & Programs',
+    body: 'Guidance on state grant programs and funding opportunities for organizations and municipalities.',
+  },
+  {
+    icon: '📞',
+    title: 'Contact the Office',
+    body: 'Reach Steve\'s office directly for general questions, event invitations, or to request a citation or resolution.',
   },
 ];
 ---
@@ -34,21 +49,38 @@ const experienceCards = [
   <!-- Section 1: Hero -->
   <Hero />
 
-  <!-- Section 2: Local Experience -->
+  <!-- Section 2: About Preview -->
   <section class="section section--white">
-    <div class="container">
-      <SectionHeading
-        title="Local experience you can recognize."
-        subtitle="Steve's background isn't from a classroom or a consultant's office — it comes from the communities he serves."
-      />
-      <div class="grid grid-3">
-        {experienceCards.map(({ icon, title, body }) => (
-          <div class="exp-card card">
-            <div class="exp-icon" aria-hidden="true">{icon}</div>
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </div>
-        ))}
+    <div class="container about-preview-layout">
+      <div class="about-preview-text">
+        <SectionHeading
+          title="A Practical Approach to Public Service"
+          subtitle="Decades of municipal leadership, regional planning, and public service — before and during his time at the State House."
+        />
+        <p>
+          A lifelong South Coast resident, Representative Steve Ouellette has spent decades serving
+          local communities through municipal leadership, regional planning, infrastructure
+          initiatives, and public service. Before joining the Massachusetts House of Representatives,
+          Steve served multiple terms on the Westport Select Board and held leadership roles focused
+          on economic development, transportation, infrastructure oversight, and community planning.
+        </p>
+        <p>
+          His professional background in public facilities management and the skilled trades continues
+          to shape his practical, solutions-focused approach to government. Today, he remains focused
+          on supporting local communities, strengthening public infrastructure, promoting economic
+          opportunity, and ensuring residents have access to responsive constituent services
+          throughout the 8th Bristol District.
+        </p>
+        <div class="about-preview-cta">
+          <a href="/about" class="btn btn-secondary">Learn More About Steve</a>
+        </div>
+      </div>
+      <div class="about-preview-logo">
+        <img
+          src="/images/wave-logo.png"
+          alt="Steve Ouellette — State Representative, 8th Bristol District"
+          class="wave-logo-feature"
+        />
       </div>
     </div>
   </section>
@@ -58,7 +90,7 @@ const experienceCards = [
     <div class="container">
       <SectionHeading
         title="Focused on what matters here."
-        subtitle="Steve's priorities start with the people and communities of the district — not national politics."
+        subtitle="Steve's priorities reflect the real work of South Coast communities — infrastructure, public safety, workforce, and practical governance."
       />
       <div class="grid grid-3">
         {issues.map(issue => (
@@ -89,12 +121,58 @@ const experienceCards = [
     </div>
   </section>
 
-  <!-- Section 5: Stay Connected / Signup -->
-  <section class="section section--dark" id="signup">
+  <!-- Section 5: Constituent Services -->
+  <section class="section section--cream">
     <div class="container">
       <SectionHeading
-        title="Stay connected with Steve."
-        subtitle="Sign up for campaign updates, office hours, and ways to stay involved across the 8th Bristol District."
+        title="How My Office Can Help"
+        subtitle="Whether you need help with a state agency, veterans services, transportation concerns, or another matter, our office is here to help."
+      />
+      <div class="grid grid-3">
+        {serviceCards.map(({ icon, title, body }) => (
+          <div class="service-preview-card card">
+            <div class="service-icon" aria-hidden="true">{icon}</div>
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </div>
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/constituent-services" class="btn btn-secondary">Request Assistance</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Community Updates -->
+  <section class="section section--dark">
+    <div class="container">
+      <SectionHeading
+        title="Community Updates"
+        subtitle="Stay informed about district events, grant announcements, legislative activity, and the people and organizations moving our communities forward."
+      />
+      <div class="updates-preview">
+        <ul class="updates-list" aria-label="Types of community updates">
+          <li>Community spotlights and recognitions</li>
+          <li>Legislative updates and voting summaries</li>
+          <li>Local events and district visits</li>
+          <li>Grant opportunities and funding announcements</li>
+          <li>Infrastructure and transportation updates</li>
+          <li>Student and small business recognitions</li>
+        </ul>
+      </div>
+      <div class="section-cta updates-cta">
+        <a href="/community-updates" class="btn btn-secondary--light">View Updates</a>
+        <a href="#signup" class="btn btn-primary">Sign Up for Updates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Stay Connected / Signup -->
+  <section class="section section--cream" id="signup">
+    <div class="container">
+      <SectionHeading
+        title="Stay Connected With the District"
+        subtitle="Receive occasional updates about community events, legislative activity, grants, state resources, and initiatives happening across the 8th Bristol District."
       />
       <SignupFormPlaceholder />
     </div>
@@ -102,30 +180,125 @@ const experienceCards = [
 </BaseLayout>
 
 <style>
-  .exp-card {
+  /* About Preview */
+  .about-preview-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .about-preview-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .about-preview-text p {
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    line-height: 1.75;
+    max-width: none;
+    margin-bottom: 1rem;
+  }
+
+  .about-preview-cta {
+    margin-top: 0.75rem;
+  }
+
+  .about-preview-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wave-logo-feature {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Service preview cards */
+  .service-preview-card {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     align-items: flex-start;
   }
 
-  .exp-icon {
+  .service-icon {
     font-size: 2rem;
     line-height: 1;
   }
 
-  .exp-card h3 {
-    font-size: 1.1rem;
+  .service-preview-card h3 {
+    font-size: 1.05rem;
   }
 
-  .exp-card p {
-    font-size: 0.95rem;
+  .service-preview-card p {
+    font-size: 0.93rem;
     color: var(--color-slate);
     max-width: none;
+    line-height: 1.6;
+  }
+
+  /* Community Updates section */
+  .updates-preview {
+    max-width: 680px;
+    margin: 0 auto 2rem;
+  }
+
+  .updates-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 2rem;
+  }
+
+  .updates-list li {
+    font-size: 0.95rem;
+    color: rgba(242, 243, 244, 0.85);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .updates-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-red);
+    font-weight: 700;
+  }
+
+  .updates-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .section-cta {
     text-align: center;
     margin-top: 2.5rem;
+  }
+
+  @media (max-width: 820px) {
+    .about-preview-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .about-preview-logo {
+      order: -1;
+    }
+
+    .wave-logo-feature {
+      max-width: 260px;
+    }
+
+    .updates-list {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
