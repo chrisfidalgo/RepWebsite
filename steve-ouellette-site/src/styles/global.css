@@ -391,6 +391,20 @@ p {
   margin-bottom: 0.75rem;
 }
 
+.section-heading h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-navy);
+  border-radius: 2px;
+  margin: 0.6rem auto 0;
+}
+
+.section-heading--left h2::after {
+  margin-left: 0;
+}
+
 .section-heading p {
   font-size: 1.1rem;
   color: var(--color-slate);
