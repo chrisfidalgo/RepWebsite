@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import IssueCard from '../components/IssueCard.astro';
+import Hero from '../components/Hero.astro';
 import { issues } from '../data/issues';
 
 const extendedIssues = [
@@ -55,16 +56,15 @@ const extendedIssues = [
   description="Steve Ouellette's priorities for the 8th Bristol District: working families, public schools, food security, arts, and practical constituent service."
 >
   <!-- Page hero -->
-  <div class="page-hero">
-    <div class="container">
-      <h1>Priorities for the 8th Bristol</h1>
-      <p>
-        Steve's priorities start with the people and communities of the district:
-        working families, students, seniors, local organizations, and the cities
-        and towns that keep daily life moving.
-      </p>
-    </div>
-  </div>
+  <Hero
+    image="/images/community-event.jpg"
+    imagePosition="right 25%"
+    imageSize="55% auto"
+    gradientSolidEnd="49%"
+    gradientFadeEnd="65%"
+    headline="Priorities for the 8th Bristol"
+    subheadline="Steve's priorities start with the people and communities of the district: working families, students, seniors, local organizations, and the cities and towns that keep daily life moving."
+  />
 
   <section class="section section--cream">
     <div class="container">

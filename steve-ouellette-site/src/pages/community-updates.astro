@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import Hero from '../components/Hero.astro';
 
 const categories = [
   'District Events',
@@ -42,23 +43,15 @@ const placeholderPosts = [
   description="Stay informed about district events, grant announcements, legislative activity, and community news from Representative Steve Ouellette's office."
 >
   <!-- Page hero -->
-  <div class="page-hero updates-hero">
-    <div class="container updates-hero-inner">
-      <div class="updates-hero-text">
-        <h1>Community Updates</h1>
-        <p>
-          Stay informed about district events, grant announcements, legislative
-          activity, and the people and organizations moving our communities forward.
-        </p>
-      </div>
-      <div class="updates-hero-img" aria-hidden="true">
-        <img
-          src="/images/outside-sign-sun.jpg"
-          alt="Steve Ouellette with community supporters across the 8th Bristol District"
-        />
-      </div>
-    </div>
-  </div>
+  <Hero
+    image="/images/campaign-supporters.jpg"
+    imagePosition="right center"
+    imageSize="55% auto"
+    gradientSolidEnd="49%"
+    gradientFadeEnd="65%"
+    headline="Community Updates"
+    subheadline="Stay informed about district events, grant announcements, legislative activity, and the people and organizations moving our communities forward."
+  />
 
   <!-- Intro + category filter -->
   <section class="section section--white">
@@ -121,38 +114,6 @@ const placeholderPosts = [
 </BaseLayout>
 
 <style>
-  .updates-hero {
-    padding-bottom: 0;
-  }
-
-  .updates-hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 3rem;
-    align-items: center;
-    padding-bottom: 3rem;
-  }
-
-  .updates-hero-text h1 {
-    margin-bottom: 0.75rem;
-  }
-
-  .updates-hero-text p {
-    font-size: 1.1rem;
-    color: rgba(242, 243, 244, 0.85);
-    line-height: 1.65;
-    max-width: none;
-  }
-
-  .updates-hero-img img {
-    width: 100%;
-    border-radius: var(--radius-lg);
-    object-fit: cover;
-    max-height: 300px;
-    display: block;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  }
-
   .updates-intro {
     font-size: 1rem;
     color: var(--color-charcoal);
@@ -255,14 +216,6 @@ const placeholderPosts = [
   }
 
   @media (max-width: 820px) {
-    .updates-hero-inner {
-      grid-template-columns: 1fr;
-    }
-
-    .updates-hero-img {
-      display: none;
-    }
-
     .signup-cta {
       grid-template-columns: 1fr;
     }

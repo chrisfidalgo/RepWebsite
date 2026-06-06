@@ -47,7 +47,29 @@ const serviceCards = [
   description="Believe in Steve. Local experience and real results for Massachusetts' 8th Bristol District."
 >
   <!-- Section 1: Hero -->
-  <Hero />
+  <Hero
+    image="/images/tracter.jpg"
+    imagePosition="right 45%"
+    imageSize="60% auto"
+    headline="Believe in Steve."
+    subheadline="Representative Steve Ouellette is proud to serve the 8th Bristol District with practical leadership focused on strong communities, reliable infrastructure, and responsive constituent services."
+  >
+    <div class="hero-actions">
+      <a href="#signup" class="btn btn-hero-primary">Sign up for updates</a>
+      <a href="/contact" class="btn btn-secondary--light">Contact Steve</a>
+    </div>
+
+    <p class="hero-location">
+      <span aria-hidden="true">📍</span>
+      Proudly serving Acushnet, parts of Fall River and New Bedford, Freetown, and Westport.
+    </p>
+
+    <div class="hero-tertiary">
+      <a href="/constituent-services">Constituent Services →</a>
+      <span class="hero-tertiary-sep" aria-hidden="true">·</span>
+      <a href="/constituent-services#citation">Request a citation or resolution →</a>
+    </div>
+  </Hero>
 
   <!-- Section 2: About Preview -->
   <section class="section section--white">
@@ -180,6 +202,59 @@ const serviceCards = [
 </BaseLayout>
 
 <style>
+  /* Home hero slot content */
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-hero-primary {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-color: var(--color-red);
+  }
+
+  .btn-hero-primary:hover {
+    background-color: #c42640;
+    border-color: #c42640;
+    color: var(--color-white);
+  }
+
+  .hero-location {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: rgba(242, 243, 244, 0.75);
+    margin-bottom: 1.25rem;
+    max-width: none;
+  }
+
+  .hero-tertiary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-tertiary a {
+    color: rgba(242, 243, 244, 0.75);
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .hero-tertiary a:hover {
+    color: var(--color-white);
+  }
+
+  .hero-tertiary-sep {
+    color: rgba(242, 243, 244, 0.4);
+    font-size: 0.9rem;
+  }
+
   /* About Preview */
   .about-preview-layout {
     display: grid;

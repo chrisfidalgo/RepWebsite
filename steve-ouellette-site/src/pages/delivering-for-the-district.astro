@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import DistrictWinCard from '../components/DistrictWinCard.astro';
+import Hero from '../components/Hero.astro';
 import { districtWins } from '../data/districtWins';
 ---
 
@@ -10,15 +11,15 @@ import { districtWins } from '../data/districtWins';
   description="See how Steve Ouellette has delivered grants, earmarks, and practical support for the communities of the 8th Bristol District."
 >
   <!-- Page hero -->
-  <div class="page-hero">
-    <div class="container">
-      <h1>Delivering for the 8th Bristol</h1>
-      <p>
-        Steve's job is to make sure the district is heard at the State House —
-        and that local communities get practical support when it matters.
-      </p>
-    </div>
-  </div>
+  <Hero
+    image="/images/ribbon-cutting.jpg"
+    imagePosition="right center"
+    imageSize="55% auto"
+    gradientSolidEnd="49%"
+    gradientFadeEnd="65%"
+    headline="Delivering for the 8th Bristol"
+    subheadline="Steve's job is to make sure the district is heard at the State House — and that local communities get practical support when it matters."
+  />
 
   <section class="section section--cream">
     <div class="container">

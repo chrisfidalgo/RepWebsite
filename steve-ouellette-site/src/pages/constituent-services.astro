@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <BaseLayout
@@ -8,26 +9,15 @@ import SectionHeading from '../components/SectionHeading.astro';
   description="Steve Ouellette's office helps connect residents with resources, answer questions, and direct requests to the right place."
 >
   <!-- Page hero -->
-  <div class="page-hero">
-    <div class="container">
-      <h1>Constituent Services</h1>
-      <p>
-        Steve's team can help connect residents with resources, answer questions,
-        and direct requests to the right place.
-      </p>
-    </div>
-  </div>
-
-  <!-- Compliance notice -->
-  <div class="compliance-banner" role="note">
-    <div class="container">
-      <p>
-        <strong>Note:</strong> This campaign website can help route your message.
-        For official State House business, please use Representative Ouellette's
-        official legislative contact information listed below.
-      </p>
-    </div>
-  </div>
+  <Hero
+    image="/images/senior-visit.jpg"
+    imagePosition="right 35%"
+    imageSize="55% auto"
+    gradientSolidEnd="49%"
+    gradientFadeEnd="65%"
+    headline="Constituent Services"
+    subheadline="Steve's team can help connect residents with resources, answer questions, and direct requests to the right place."
+  />
 
   <section class="section section--cream">
     <div class="container">
@@ -188,18 +178,6 @@ import SectionHeading from '../components/SectionHeading.astro';
 </BaseLayout>
 
 <style>
-  .compliance-banner {
-    background-color: #e8eef5;
-    border-bottom: 2px solid var(--color-blue);
-    padding-block: 1rem;
-  }
-
-  .compliance-banner p {
-    font-size: 0.9rem;
-    color: var(--color-navy);
-    max-width: none;
-  }
-
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <BaseLayout
@@ -8,12 +9,15 @@ import SectionHeading from '../components/SectionHeading.astro';
   description="Learn about Steve Ouellette's lifetime of service to the South Coast communities of the 8th Bristol District."
 >
   <!-- Page hero -->
-  <div class="page-hero">
-    <div class="container">
-      <h1>About Steve Ouellette</h1>
-      <p>A lifetime of local service. A practical voice for the 8th Bristol.</p>
-    </div>
-  </div>
+  <Hero
+    image="/images/speaking-new-bedford.jpg"
+    imagePosition="right 20%"
+    imageSize="55% auto"
+    gradientSolidEnd="49%"
+    gradientFadeEnd="65%"
+    headline="About Steve Ouellette"
+    subheadline="A lifetime of local service. A practical voice for the 8th Bristol."
+  />
 
   <section class="section section--cream">
     <div class="container about-layout">
@@ -111,11 +115,6 @@ import SectionHeading from '../components/SectionHeading.astro';
 
       <!-- Sidebar -->
       <aside class="about-sidebar" aria-label="Quick facts about Steve Ouellette">
-        <img
-          src="/images/talking.jpg"
-          alt="Steve Ouellette speaking at a New Bedford community event"
-          class="sidebar-photo"
-        />
         <div class="sidebar-card card">
           <h3>Quick Facts</h3>
           <dl class="fact-list">
@@ -202,14 +201,6 @@ import SectionHeading from '../components/SectionHeading.astro';
     border-radius: var(--radius);
     font-size: 0.95rem;
     color: var(--color-navy);
-  }
-
-  .sidebar-photo {
-    width: 100%;
-    border-radius: var(--radius-lg);
-    object-fit: cover;
-    display: block;
-    max-height: 280px;
   }
 
   .content-photo {
