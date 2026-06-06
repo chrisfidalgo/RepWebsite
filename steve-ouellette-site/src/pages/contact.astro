@@ -12,10 +12,9 @@ import Hero from '../components/Hero.astro';
   <!-- Page hero -->
   <Hero
     image="/images/steve-down-point.png"
-    imagePosition="right bottom"
-    imageSize="auto 100%"
-    gradientSolidEnd="55%"
-    gradientFadeEnd="71%"
+    imagePosition="55% 42%"
+    imageSize="50% auto"
+    gradient="linear-gradient(to right, rgba(12,30,68,1) 0%, rgba(21,52,118,1) 29%, rgba(28,70,159,0.2) 40%, rgba(29,72,164,0) 58%, rgba(30,74,167,1) 72%, rgba(30,75,170,1) 100%)"
     headline="Contact Steve"
     subheadline="We're here to help. Use the options below to connect with the campaign or request specific services."
   />
@@ -138,8 +137,14 @@ import Hero from '../components/Hero.astro';
 
 <style>
   :global(.hero) {
-    min-height: 680px;
-    padding-top: 1.5rem !important;
+    min-height: 620px !important;
+    align-items: flex-start !important;
+    padding-top: 4rem !important;
+  }
+
+  :global(.hero-headline),
+  :global(.hero-subheadline) {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
   }
 
   .contact-layout {

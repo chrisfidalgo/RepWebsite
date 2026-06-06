@@ -5,6 +5,7 @@ interface Props {
   imageSize?: string;
   gradientSolidEnd?: string;
   gradientFadeEnd?: string;
+  gradient?: string;
   headline: string;
   subheadline: string;
 }
@@ -15,9 +16,13 @@ const {
   imageSize = '60% auto',
   gradientSolidEnd = '41%',
   gradientFadeEnd = '60%',
+  gradient: gradientOverride,
   headline,
   subheadline,
 } = Astro.props;
+
+const gradient = gradientOverride ??
+  `linear-gradient(to right, rgba(12, 30, 68, 1.0) 0%, rgba(21, 52, 118, 1.0) ${gradientSolidEnd}, rgba(28, 70, 159, 0.2) ${gradientFadeEnd}, rgba(30, 75, 170, 0.0) 100%)`;
 ---
 
 <section
@@ -28,7 +33,7 @@ const {
   <div
     class="hero-overlay"
     aria-hidden="true"
-    style={`background: linear-gradient(to right, rgba(12, 30, 68, 1.0) 0%, rgba(21, 52, 118, 1.0) ${gradientSolidEnd}, rgba(28, 70, 159, 0.2) ${gradientFadeEnd}, rgba(30, 75, 170, 0.0) 100%);`}
+    style={`background: ${gradient};`}
   ></div>
 
   <div class="container hero-inner">
@@ -46,8 +51,11 @@ const {
     background-color: #0C1E44;
     background-repeat: no-repeat;
     color: var(--color-white);
-    padding-top: 5rem;
-    padding-bottom: 0;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     -webkit-mask-image: url('/images/hero-mask.png');
     mask-image: url('/images/hero-mask.png');
     mask-size: 100% 100%;
@@ -64,7 +72,7 @@ const {
   .hero-inner {
     position: relative;
     z-index: 1;
-    padding-bottom: 4.5rem;
+    width: 100%;
   }
 
   .hero-content {
@@ -94,11 +102,9 @@ const {
 
   @media (max-width: 480px) {
     .hero {
-      padding-top: 3rem;
-    }
-
-    .hero-inner {
-      padding-bottom: 3rem;
+      min-height: 320px;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 </style>
