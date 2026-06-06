@@ -43,33 +43,35 @@
     </div>
   </div>
 
-  <div class="hero-wave-wrap" aria-hidden="true">
-    <img src="/images/hero-wave.svg" alt="" class="hero-wave-img" />
-  </div>
 </section>
 
 <style>
   .hero {
     position: relative;
-    background-image: url('/images/campaign-supporters.jpg');
-    background-size: cover;
-    background-position: center top;
+    background-color: #0C1E44;
+    background-image: url('/images/tracter.jpg');
+    background-size: 60% auto;
+    background-position: right 45%;
+    background-repeat: no-repeat;
     color: var(--color-white);
     padding-top: 5rem;
     padding-bottom: 0;
+    -webkit-mask-image: url('/images/hero-mask.png');
+    mask-image: url('/images/hero-mask.png');
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
   }
 
-  /* Single gradient layer: opaque dark panel left → completely clear right */
+  /* Solid left panel fading into the photo at the seam */
   .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       to right,
-      rgba(8, 20, 42, 0.93) 0%,
-      rgba(8, 20, 42, 0.93) 40%,
-      rgba(8, 20, 42, 0.50) 58%,
-      rgba(8, 20, 42, 0.0) 74%,
-      rgba(8, 20, 42, 0.0) 100%
+      rgba(12, 30, 68, 1.0)  0%,
+      rgba(21, 52, 118, 1.0) 41%,
+      rgba(28, 70, 159, 0.2) 60%,
+      rgba(30, 75, 170, 0.0) 100%
     );
     z-index: 0;
   }
@@ -81,7 +83,7 @@
   }
 
   .hero-content {
-    max-width: 680px;
+    max-width: 500px;
   }
 
   .hero-tagline-pill {
@@ -170,19 +172,6 @@
   .hero-tertiary-sep {
     color: rgba(242, 243, 244, 0.4);
     font-size: 0.9rem;
-  }
-
-  .hero-wave-wrap {
-    position: relative;
-    z-index: 1;
-    line-height: 0;
-    margin-top: -2px;
-  }
-
-  .hero-wave-img {
-    width: 100%;
-    height: 60px;
-    display: block;
   }
 
   @media (max-width: 480px) {
