@@ -114,7 +114,7 @@ const serviceCards = [
         title="Focused on what matters here."
         subtitle="Steve's priorities reflect the real work of South Coast communities — infrastructure, public safety, workforce, and practical governance."
       />
-      <div class="grid grid-3">
+      <div class="grid grid-3 priorities-grid">
         {issues.map(issue => (
           <IssueCard title={issue.title} description={issue.description} />
         ))}
@@ -253,6 +253,11 @@ const serviceCards = [
   .hero-tertiary-sep {
     color: rgba(242, 243, 244, 0.4);
     font-size: 0.9rem;
+  }
+
+  /* Priorities cards: white on home page (cream on other pages) */
+  :global(.priorities-grid .issue-card) {
+    background: var(--color-white);
   }
 
   /* About Preview */
