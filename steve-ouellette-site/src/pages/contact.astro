@@ -11,9 +11,9 @@ import Hero from '../components/Hero.astro';
 >
   <!-- Page hero -->
   <Hero
-    image="/images/statehouse-students.jpg"
-    imagePosition="right 20%"
-    imageSize="55% auto"
+    image="/images/steve-down-point.png"
+    imagePosition="right bottom"
+    imageSize="auto 100%"
     headline="Contact Steve"
     subheadline="We're here to help. Use the options below to connect with the campaign or request specific services."
   />
@@ -135,6 +135,10 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+  .hero {
+    min-height: 420px;
+  }
+
   .contact-layout {
     display: flex;
     flex-direction: column;
