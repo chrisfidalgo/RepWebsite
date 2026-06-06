@@ -19,7 +19,7 @@ import Hero from '../components/Hero.astro';
     subheadline="Steve's team can help connect residents with resources, answer questions, and direct requests to the right place."
   />
 
-  <section class="section section--cream">
+  <section class="section section--white" style="padding-bottom: 2.5rem;">
     <div class="container">
 
       <div class="services-grid">
@@ -126,7 +126,7 @@ import Hero from '../components/Hero.astro';
   </section>
 
   <!-- Official office contact -->
-  <section class="section section--white">
+  <section class="section section--white" style="padding-top: 2.5rem;">
     <div class="container">
       <div class="official-contact-layout">
         <div class="official-disclaimer info-box">
@@ -178,6 +178,11 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
+  .service-card.card,
+  .invite-card.card {
+    background: #fdf8f0;
+  }
+
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

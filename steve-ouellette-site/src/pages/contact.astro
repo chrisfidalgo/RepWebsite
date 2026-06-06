@@ -18,7 +18,7 @@ import Hero from '../components/Hero.astro';
     subheadline="We're here to help. Use the options below to connect with the campaign or request specific services."
   />
 
-  <section class="section section--cream">
+  <section class="section section--white">
     <div class="container">
       <div class="contact-layout">
 
@@ -135,8 +135,9 @@ import Hero from '../components/Hero.astro';
 </BaseLayout>
 
 <style>
-  .hero {
-    min-height: 420px;
+  :global(.hero) {
+    min-height: 680px;
+    padding-top: 1.5rem !important;
   }
 
   .contact-layout {

@@ -21,17 +21,8 @@ import { districtWins } from '../data/districtWins';
     subheadline="Steve's job is to make sure the district is heard at the State House — and that local communities get practical support when it matters."
   />
 
-  <section class="section section--cream">
+  <section class="section section--white">
     <div class="container">
-
-      <!-- Verification notice -->
-      <div class="verification-notice info-box" role="note">
-        <strong>About this page:</strong> The entries below are placeholders. All items marked
-        "Needs verification" must be confirmed with citations and sources before the site launches.
-        Do not add dollar amounts, names, or program details until verified. See the launch checklist
-        in the README.
-      </div>
-
       <SectionHeading
         title="District results and community wins."
         subtitle="From earmarks and grant support to food security and arts funding, Steve works to make state resources count for the 8th Bristol."
@@ -42,20 +33,11 @@ import { districtWins } from '../data/districtWins';
           <DistrictWinCard {...win} />
         ))}
       </div>
-
-      <div class="photo-strip">
-        <img
-          src="/images/standing-outside.jpg"
-          alt="Steve Ouellette with community members at a local outdoor event"
-          class="strip-photo"
-        />
-      </div>
-
     </div>
   </section>
 
   <!-- How it works section -->
-  <section class="section section--white">
+  <section class="section section--cream">
     <div class="container">
       <SectionHeading
         title="How Steve advocates for the district."
@@ -118,31 +100,10 @@ import { districtWins } from '../data/districtWins';
 </BaseLayout>
 
 <style>
-  .verification-notice {
-    margin-bottom: 2.5rem;
-  }
-
-  .photo-strip {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .strip-photo {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
-    object-position: center 25%;
-    border-radius: var(--radius-lg);
-    display: block;
-  }
-
   .wins-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 3rem;
   }
 
   .how-grid {
