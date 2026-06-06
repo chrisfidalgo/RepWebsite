@@ -145,7 +145,7 @@ const currentPath = Astro.url.pathname;
   }
 
   .logo-img {
-    height: 42px;
+    height: 105px;
     width: auto;
     display: block;
   }
@@ -168,19 +168,20 @@ const currentPath = Astro.url.pathname;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 500;
-    border-radius: var(--radius);
-    transition: color 0.15s, background-color 0.15s;
+    border-bottom: 3px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
     white-space: nowrap;
   }
 
-  .desktop-nav a:hover,
-  .desktop-nav a.active {
+  .desktop-nav a:hover {
     color: var(--color-navy);
-    background-color: rgba(15, 62, 101, 0.07);
+    border-bottom-color: rgba(8, 77, 137, 0.35);
   }
 
   .desktop-nav a.active {
+    color: var(--color-navy);
     font-weight: 600;
+    border-bottom-color: var(--color-blue);
   }
 
   .nav-cta {
