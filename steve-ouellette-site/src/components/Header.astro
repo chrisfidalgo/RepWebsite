@@ -5,7 +5,6 @@ const navLinks = [
   { href: '/priorities', label: 'Priorities' },
   { href: '/delivering-for-the-district', label: 'Results for the District' },
   { href: '/community-updates', label: 'Community Updates' },
-  { href: '/constituent-services', label: 'Constituent Services' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -40,6 +39,15 @@ const currentPath = Astro.url.pathname;
       </ul>
     </nav>
 
+    <a
+      href="https://secure.actblue.com/donate/steven-ouellette-1"
+      class="btn nav-cta nav-donate"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Donate to the Steve Ouellette campaign"
+    >
+      Donate
+    </a>
     <a href="/#signup" class="btn btn-primary nav-cta" aria-label="Sign up for campaign updates">
       Sign Up
     </a>
@@ -74,6 +82,12 @@ const currentPath = Astro.url.pathname;
         ))}
       </ul>
       <a href="/#signup" class="btn btn-primary mobile-cta">Sign Up for Updates</a>
+      <a
+        href="https://secure.actblue.com/donate/steven-ouellette-1"
+        class="btn mobile-cta mobile-donate"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Donate</a>
     </nav>
   </div>
 </header>
@@ -190,6 +204,18 @@ const currentPath = Astro.url.pathname;
     padding: 0.55rem 1.25rem;
   }
 
+  .nav-donate {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: 2px solid var(--color-red);
+  }
+
+  .nav-donate:hover {
+    background-color: #c42640;
+    border-color: #c42640;
+    color: var(--color-white);
+  }
+
   /* Hamburger */
   .hamburger {
     display: none;
@@ -273,6 +299,18 @@ const currentPath = Astro.url.pathname;
   .mobile-cta {
     width: 100%;
     justify-content: center;
+  }
+
+  .mobile-donate {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: 2px solid var(--color-red);
+    margin-top: 0.5rem;
+  }
+
+  .mobile-donate:hover {
+    background-color: #c42640;
+    border-color: #c42640;
   }
 
   /* Responsive breakpoints */

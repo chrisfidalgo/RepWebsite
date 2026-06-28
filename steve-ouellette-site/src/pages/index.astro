@@ -7,39 +7,6 @@ import DistrictWinCard from '../components/DistrictWinCard.astro';
 import SignupFormPlaceholder from '../components/SignupFormPlaceholder.astro';
 import { issues } from '../data/issues';
 import { districtWins } from '../data/districtWins';
-
-const serviceCards = [
-  {
-    icon: '🏛',
-    title: 'State Agency Assistance',
-    body: 'Help navigating MassHealth, unemployment, RMV, housing programs, and other state agencies.',
-  },
-  {
-    icon: '🎖',
-    title: 'Veterans Resources',
-    body: 'Connecting veterans with state and federal benefits, services, and support programs.',
-  },
-  {
-    icon: '👴',
-    title: 'Senior Services',
-    body: 'Referrals to Council on Aging programs, housing resources, and senior transportation assistance.',
-  },
-  {
-    icon: '🚌',
-    title: 'Transportation Assistance',
-    body: 'Help with transit concerns, RMV issues, and transportation accessibility questions.',
-  },
-  {
-    icon: '📋',
-    title: 'Grants & Programs',
-    body: 'Guidance on state grant programs and funding opportunities for organizations and municipalities.',
-  },
-  {
-    icon: '📞',
-    title: 'Contact the Office',
-    body: 'Reach Steve\'s office directly for general questions, event invitations, or to request a citation or resolution.',
-  },
-];
 ---
 
 <BaseLayout
@@ -57,18 +24,19 @@ const serviceCards = [
     <div class="hero-actions">
       <a href="#signup" class="btn btn-hero-primary">Sign up for updates</a>
       <a href="/contact" class="btn btn-secondary--light">Contact Steve</a>
+      <a
+        href="https://secure.actblue.com/donate/steven-ouellette-1"
+        class="btn btn-hero-donate"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Donate</a>
     </div>
 
     <p class="hero-location">
       <span aria-hidden="true">📍</span>
-      Proudly serving Westport, Acushnet, parts of Fall River and New Bedford, and Freetown.
+      Proudly serving Westport and parts of Acushnet, Fall River, New Bedford, and Freetown.
     </p>
 
-    <div class="hero-tertiary">
-      <a href="/constituent-services">Constituent Services →</a>
-      <span class="hero-tertiary-sep" aria-hidden="true">·</span>
-      <a href="/constituent-services#citation">Request a citation or resolution →</a>
-    </div>
   </Hero>
 
   <!-- Section 2: About Preview -->
@@ -143,28 +111,6 @@ const serviceCards = [
     </div>
   </section>
 
-  <!-- Section 5: Constituent Services -->
-  <section class="section section--cream">
-    <div class="container">
-      <SectionHeading
-        title="How My Office Can Help"
-        subtitle="Whether you need help with a state agency, veterans services, transportation concerns, or another matter, our office is here to help."
-      />
-      <div class="grid grid-3">
-        {serviceCards.map(({ icon, title, body }) => (
-          <div class="service-preview-card card">
-            <div class="service-icon" aria-hidden="true">{icon}</div>
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </div>
-        ))}
-      </div>
-      <div class="section-cta">
-        <a href="/constituent-services" class="btn btn-secondary">Request Assistance</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Section 6: Community Updates -->
   <section class="section section--dark">
     <div class="container">
@@ -175,7 +121,6 @@ const serviceCards = [
       <div class="updates-preview">
         <ul class="updates-list" aria-label="Types of community updates">
           <li>Community spotlights and recognitions</li>
-          <li>Legislative updates and voting summaries</li>
           <li>Local events and district visits</li>
           <li>Grant opportunities and funding announcements</li>
           <li>Infrastructure and transportation updates</li>
@@ -222,6 +167,18 @@ const serviceCards = [
     color: var(--color-white);
   }
 
+  .btn-hero-donate {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid rgba(242, 243, 244, 0.6);
+  }
+
+  .btn-hero-donate:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--color-white);
+    color: var(--color-white);
+  }
+
   .hero-location {
     display: flex;
     align-items: flex-start;
@@ -230,29 +187,6 @@ const serviceCards = [
     color: rgba(242, 243, 244, 0.75);
     margin-bottom: 1.25rem;
     max-width: none;
-  }
-
-  .hero-tertiary {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .hero-tertiary a {
-    color: rgba(242, 243, 244, 0.75);
-    font-size: 0.9rem;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
-  .hero-tertiary a:hover {
-    color: var(--color-white);
-  }
-
-  .hero-tertiary-sep {
-    color: rgba(242, 243, 244, 0.4);
-    font-size: 0.9rem;
   }
 
   /* Priorities cards: white on home page (cream on other pages) */
@@ -298,30 +232,6 @@ const serviceCards = [
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Service preview cards */
-  .service-preview-card {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    align-items: flex-start;
-  }
-
-  .service-icon {
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  .service-preview-card h3 {
-    font-size: 1.05rem;
-  }
-
-  .service-preview-card p {
-    font-size: 0.93rem;
-    color: var(--color-slate);
-    max-width: none;
-    line-height: 1.6;
   }
 
   /* Community Updates section */

@@ -13,7 +13,7 @@ import Hero from '../components/Hero.astro';
   <Hero
     image="/images/steve-down-point.png"
     imagePosition="55% 42%"
-    imageSize="50% auto"
+    imageSize="38% auto"
     gradient="linear-gradient(to right, rgba(12,30,68,1) 0%, rgba(21,52,118,1) 29%, rgba(28,70,159,0.2) 40%, rgba(29,72,164,0) 58%, rgba(30,74,167,1) 72%, rgba(30,75,170,1) 100%)"
     headline="Contact Steve"
     subheadline="We're here to help. Use the options below to connect with the campaign or request specific services."
@@ -70,47 +70,16 @@ import Hero from '../components/Hero.astro';
           </div>
         </div>
 
-        <!-- Section 3: Citation or resolution -->
-        <div class="contact-section card" id="citation">
+        <!-- Section 3: Invite Steve to an Event -->
+        <div class="contact-section card" id="invite">
           <span class="accent-bar"></span>
-          <h2>Request a citation or resolution</h2>
+          <h2>Invite Steve to an Event</h2>
           <p>
-            Citations and resolutions are formal acknowledgments from the
-            Massachusetts Legislature. They can recognize retirements,
-            anniversaries, achievements, and community milestones.
+            Steve welcomes invitations to community events, organizational
+            meetings, school visits, and local gatherings across the 8th
+            Bristol District.
           </p>
-          <p>
-            To request a citation or resolution, please reach out with the
-            following information:
-          </p>
-          <ul class="request-list">
-            <li>Name of person or organization being recognized</li>
-            <li>Nature of the achievement or milestone</li>
-            <li>Date of any event where it will be presented (if applicable)</li>
-            <li>Your contact information</li>
-          </ul>
-          <div class="form-placeholder-banner" role="note">
-            ⚠ FORM PLACEHOLDER — Connect to Google Forms or approved provider before launch.
-          </div>
-          <div class="google-form-placeholder" aria-label="Citation request form placeholder">
-            <p>[Citation request form goes here — replace with Google Form iframe]</p>
-          </div>
-        </div>
-
-        <!-- Section 4: Office hours -->
-        <div class="contact-section card" id="office-hours">
-          <span class="accent-bar"></span>
-          <h2>Ask about office hours</h2>
-          <p>
-            Steve periodically holds constituent office hours across the 8th
-            Bristol District. Contact the campaign to ask about upcoming
-            office hours in your community.
-          </p>
-          <p class="placeholder-note">
-            [PLACEHOLDER — Add office hours schedule when available.
-            Consider linking to a public calendar or Google Form RSVP.]
-          </p>
-          <a href="#campaign-contact" class="btn btn-primary">Contact the campaign</a>
+          <a href="#campaign-contact" class="btn btn-primary">Send an Invitation</a>
         </div>
 
       </div>
@@ -137,7 +106,7 @@ import Hero from '../components/Hero.astro';
 
 <style>
   :global(.hero) {
-    min-height: 620px !important;
+    min-height: 380px !important;
     align-items: flex-start !important;
     padding-top: 4rem !important;
   }
@@ -168,15 +137,6 @@ import Hero from '../components/Hero.astro';
     color: var(--color-charcoal);
     max-width: none;
     line-height: 1.7;
-  }
-
-  .request-list {
-    padding-left: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    font-size: 0.93rem;
-    color: var(--color-charcoal);
   }
 
   .google-form-placeholder {

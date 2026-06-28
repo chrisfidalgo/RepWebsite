@@ -7,11 +7,20 @@ import { issues } from '../data/issues';
 
 const extendedIssues = [
   {
+    title: 'Affordability & Cost of Living',
+    description:
+      'Working families on the South Coast are feeling the squeeze of rising costs. Steve supports practical, state-level measures to help residents afford housing, energy, and daily necessities.',
+    extended:
+      'The cost of living has risen sharply across Massachusetts, and South Coast communities are not immune. Steve supports targeted relief for working families: housing production investments, energy cost mitigation, prescription drug affordability measures, and policies that keep Massachusetts livable for the people who built it.',
+    icon: '/images/icon-affordability.png',
+  },
+  {
     title: 'Supporting Unions and Working Families',
     description:
       'Steve believes working people deserve fair wages, safe conditions, and a government that respects the dignity of labor.',
     extended:
       'Unions built the middle class on the South Coast. Steve supports collective bargaining rights, workplace safety protections, and policies that keep good jobs in Massachusetts. He stands with workers — whether in the building trades, public service, or private sector.',
+    icon: '/images/icon-workers.png',
   },
   {
     title: 'Strengthening Public Schools',
@@ -19,6 +28,7 @@ const extendedIssues = [
       'Strong public schools are the foundation of strong communities. Steve supports investments that help students, educators, and families succeed.',
     extended:
       'Every child in the 8th Bristol deserves access to a quality public education, regardless of their ZIP code. Steve supports fair education funding, resources for teachers, and programs that help kids from all backgrounds reach their potential.',
+    icon: '/images/icon-schools.png',
   },
   {
     title: 'Fighting Food Insecurity',
@@ -26,6 +36,7 @@ const extendedIssues = [
       'No family should have to wonder where their next meal is coming from. Steve supports community-based food security efforts and practical state support for local organizations.',
     extended:
       'Food insecurity affects families across the district — in cities and towns alike. Steve works to support local food pantries, school meal programs, and state-level investments in food access. He believes practical support for community organizations is more effective than top-down mandates.',
+    icon: '/images/icon-food.png',
   },
   {
     title: 'Arts, Culture, and Community Life',
@@ -33,6 +44,7 @@ const extendedIssues = [
       'Arts and culture help communities thrive. Steve supports investments that bring people together and strengthen local identity.',
     extended:
       'From Fall River to New Bedford, the South Coast has a rich cultural heritage worth preserving and celebrating. Steve supports funding for local arts organizations, cultural institutions, and community events that reflect the diversity and character of the district.',
+    icon: '/images/icon-arts.png',
   },
   {
     title: 'Helping Cities and Towns Get Results',
@@ -40,6 +52,7 @@ const extendedIssues = [
       'State government should be a partner to local communities. Steve works to help cities and towns navigate state resources, funding, and constituent needs.',
     extended:
       'Municipalities across the 8th Bristol often face the same challenges: limited budgets, aging infrastructure, and residents who need help connecting to state programs. Steve advocates for direct municipal aid, local earmarks, and responsive state partnerships that help cities and towns do their jobs.',
+    icon: '/images/icon-cities.png',
   },
   {
     title: 'Practical Constituent Service',
@@ -47,6 +60,7 @@ const extendedIssues = [
       "Government should work for people. Steve's team helps constituents connect with the right resources, navigate state systems, and get the answers they need.",
     extended:
       "Whether you need help with a state agency, want to request a citation or resolution, or just have a question about your community — Steve's office is here to help. Good constituent service is not a favor; it's the job.",
+    icon: '/images/icon-constituent.png',
   },
 ];
 ---
@@ -74,6 +88,7 @@ const extendedIssues = [
             title={issue.title}
             description={issue.description}
             extendedDescription={issue.extended}
+            icon={issue.icon}
           />
         ))}
       </div>

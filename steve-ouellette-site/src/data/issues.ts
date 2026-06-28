@@ -6,6 +6,11 @@ export type Issue = {
 
 export const issues: Issue[] = [
   {
+    title: 'Affordability & Cost of Living',
+    description:
+      'Working families on the South Coast are feeling the squeeze of rising costs. Steve supports practical, state-level measures to help residents afford housing, energy, and daily necessities.',
+  },
+  {
     title: 'Infrastructure & Transportation',
     description:
       'Supporting long-term investments in roads, public facilities, transportation systems, and resilient infrastructure that strengthen communities across the South Coast.',
